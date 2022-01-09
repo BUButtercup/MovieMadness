@@ -1,0 +1,10 @@
+/* color variables */
+:root {
+    --dark: rgb(0, 62, 65);
+    --light: rgb(164, 226, 235);
+}
+
+
+.dropdown li:hover {
+    background-color: var(--light);
+}
