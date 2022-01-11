@@ -1,51 +1,84 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./Assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.YT6J0jzIEmE0AsxEhpXsaAHaHC%26pid%3DApi&f=1">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>MovieMania</title>
 
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Project</title>
+    <link rel="stylesheet" href="./Assets/css/foundation.min.css">
+    <link rel="stylesheet" href="./Assets/css/foundation.css">
+    <link rel="stylesheet" href="./Assets/css/app.css">
   </head>
-  <body>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">MovieMania</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-    
+<body>
+
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <h2>Our Project</h2>
+      </div>
+      <div class="top-bar-right">
+      </div>
+    </div>
+  </header>
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <h1>Welcome to Our Project</h1>
+      </div>
+    </div>
+
+      <div class="grid-x grid-padding-x">
+        <div class="large-10 cell">
+          <input type="search" placeholder="Search here...">
+        </div>
+        <div>
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+              <a href="#">Choose</a>
+              <ul class="menu">
+                <li><a href="#">Title</a></li>
+                <li><a href="#">Genre</a></li>
+                <li><a href="#">Release Year</a></li>
+                <li><a href="#">Director</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
-      </nav>
-    
-      <main class="container">
-        <form class="row">
-            <div class="input-field col s9">
-              <i class="material-icons prefix">search</i>
-              <input id="icon_search" type="text" class="validate">
-              <label for="icon_search">Search here...</label>
-            </div>
-            <div>
-                <!-- Dropdown Trigger -->
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">Title</a></li>
-                    <li><a href="#!">Genre</a></li>
-                    <li><a href="#!">Release Year</a></li>
+        <button type="button" class="button">Search</button>
+      </div>
 
-                </ul>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+          <div class="callout">
+            <h3>We&rsquo;re stoked you want to try our web app! </h3>
+            <p>To get going....</p>
+            <div class="grid-x grid-padding-x">
+              <div class="large-4 medium-4 cell">
+                <p><a href="https://get.foundation/sites/docs/">Foundation Documentation</a><br />We could link to our APIs here?</p>
+              </div>
+              <div class="large-4 medium-4 cell">
+                <p><a href="https://github.com/foundation/foundation-sites/discussions">Foundation Forum</a><br />Second API link</p>
+              </div>
             </div>
-        </form>
-            
-      </main>      
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./Assets/js/script.js"></script>
+            <div class="grid-x grid-padding-x">
+              <div class="large-4 medium-4 medium-push-2 cell">
+                <p><a href="https://github.com/foundation/foundation-sites">Foundation on Github</a><br />About us?</p>
+              </div>
+              <div class="large-4 medium-4 medium-pull-2 cell">
+                <p><a href="https://twitter.com/FoundationCSS">@FoundationCSS</a><br />Something fun?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./Assets/js/vendor/jquery.js"></script>
+    <script src="./Assets/js/vendor/what-input.js"></script>
+    <script src="./Assets/js/vendor/foundation.js"></script>
+    <script src="./Assets/js/app.js"></script>
   </body>
 </html>
