@@ -1,20 +1,27 @@
 /* color variables */
 :root {
     --dark: rgb(0, 62, 65);
-    --light: rgb(37, 157, 175);
+    --light: rgb(39, 61, 65);
     --whiteFont: rgb(245, 245, 245);
     --darkFont: rgb(0,0,0);
 }
 
-
-.dropdown li:hover {
-    background-color: var(--light);
+body {
+    background-color: var(--dark);
+    color: var(--whiteFont);
 }
 
 .top-bar {
     background-color: var(--dark);
     color: var(--whiteFont);
-    /* need this centered */
+}
+
+.dropdown {
+    color: var(--darkFont);
+}
+
+.dropdown li:hover {
+    background-color: var(--light);
 }
 
 #banner {
@@ -23,6 +30,8 @@
 }
 
 #reel {
-    height: 100px;
-    width: 100px;
+    height: 500px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
