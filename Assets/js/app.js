@@ -1,3 +1,5 @@
+$(document).foundation()
+
 // dropdown
 // $('.dropdown-trigger').dropdown();
 
