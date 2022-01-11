@@ -1,10 +1,23 @@
 /* color variables */
 :root {
     --dark: rgb(0, 62, 65);
-    --light: rgb(164, 226, 235);
+    --light: rgb(37, 157, 175);
+    --whiteFont: rgb(245, 245, 245);
+    --darkFont: rgb(0,0,0);
 }
 
 
 .dropdown li:hover {
     background-color: var(--light);
+}
+
+.top-bar {
+    background-color: var(--dark);
+    color: var(--whiteFont);
+    /* need this centered */
+}
+
+#banner {
+    height: 250px;
+    width: 100vw;
 }
