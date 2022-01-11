@@ -1,21 +1,21 @@
-
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Project</title>
-    <link rel="stylesheet" href="./Assets/css/foundation.css">
-    <link rel="stylesheet" href="./Assets/css/app.css">
-  </head>
-<body>
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMadness</title>
+  <link rel="stylesheet" href="./Assets/css/foundation.css">
+  <link rel="stylesheet" href="./Assets/css/app.css">
+</head>
+
+<body>
   <header>
     <div class="top-bar ">
       <div class="top-bar-left text-center">
-        <h2>MovieMadness</h2>
-        <p>We're mad about movie!</p>
+        <h1>MovieMadness</h1>
+        <h4>We're mad for movies!</h4>
       </div>
       <div class="top-bar-right">
       </div>
@@ -27,6 +27,9 @@
     <img id="banner" src="Assets/banner.jpeg">
   </div>
 
+<!-- container for body -->
+
+  <!-- container between baner and search bar -->
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
@@ -34,88 +37,86 @@
       </div>
     </div>
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-7 cell">
-          <input type="search" placeholder="Search here...">
-        </div>
-        <div class="large-2 cell">
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="#">Genre (optional)</a>
-              <ul class="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Animation</a></li>
-                <li><a href="#">Comedy</a></li>
-                <li><a href="#">Crime</a></li>
-                <li><a href="#">Documentary</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Family</a></li>
-                <li><a href="#">Fanatasy</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Horror</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Mystery</a></li>
-                <li><a href="#">Romance</a></li>
-                <li><a href="#">Sci-Fi</a></li>
-                <li><a href="#">TV Movie</a></li>
-                <li><a href="#">Thriller</a></li>
-                <li><a href="#">War</a></li>
-                <li><a href="#">Western</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="large-2 cell">  
-          <ul class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="#">Year (optional)</a>
-              <ul class="menu">
-                <li><a href="#">1995</a></li>
-                <li><a href="#">1996</a></li>
-                <li><a href="#">1997</a></li>
-                <li><a href="#">1998</a></li>
-                <li><a href="#">1999</a></li>
-
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="large-1">
-          <button type="button" class="button">Search</button>
-        </div>
+    <!-- container for search bar and dropdown menu -->
+    <div class="grid-x grid-padding-x">
+      <div class="large-7 cell">
+        <input type="search" placeholder="Search here...">
       </div>
+      <div class="large-2 cell">
+            <select class="menu" placeholder="Genre">
+              <option value ="">Select Genre</option>
+              <option value = "Action">Action</li>
+              <option value = "Adventure">Adventure</li>
+              <option value = "Animation">Animation</li>
+              <option value = "Comedy">Comedy</li>
+              <option value = "Crime">Crime</li>
+              <option value = "Documentary">Documentary</li>
+              <option value = "Drama">Drama</li>
+              <option value = "Family">Family</li>
+              <option value = "Fanatasy">Fanatasy</li>
+              <option value = "History">History</li>
+              <option value = "Horror">Horror</li>
+              <option value = "Music">Music</li>
+              <option value = "Mystery">Mystery</li>
+              <option value = "Romance">Romance</li>
+              <option value = "Sci-Fi">Sci-Fi</li>
+              <option value = "TV Movie">TV Movie</li>
+              <option value = "Thriller">Thriller</li>
+              <option value = "War">War</li>
+              <option value = "Western">Western</li>
+              </select>
+      </div>
+      <div class="large-2 cell">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li>
+            <a href="#">Year (optional)</a>
+            <ul class="menu">
+              <li><a href="#">1995</a></li>
+              <li><a href="#">1996</a></li>
+              <li><a href="#">1997</a></li>
+              <li><a href="#">1998</a></li>
+              <li><a href="#">1999</a></li>
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <div class="callout">
-            <h3>We&rsquo;re stoked you want to try our web app! </h3>
-            <p>To get going....</p>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <p><a href="https://get.foundation/sites/docs/">Foundation Documentation</a><br />We could link to our APIs here?</p>
-              </div>
-              <div class="large-4 medium-4 cell">
-                <p><a href="https://github.com/foundation/foundation-sites/discussions">Foundation Forum</a><br />Second API link</p>
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 medium-push-2 cell">
-                <p><a href="https://github.com/foundation/foundation-sites">Foundation on Github</a><br />About us?</p>
-              </div>
-              <div class="large-4 medium-4 medium-pull-2 cell">
-                <p><a href="https://twitter.com/FoundationCSS">@FoundationCSS</a><br />Something fun?</p>
-              </div>
-            </div>
-          </div>
-        </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="large-1">
+        <button type="button" class="button">Search</button>
       </div>
     </div>
 
+    <!-- card that explains how to use the site and holds the random generator -->
+    <div class="card" style="width: 81vw;">
+      <div class="card-section">
+        <h4>Use the search bar above to find your favorite movie! You can search by title, genre and year. <br>
+        If you're not sure what you want to watch, click below to Spin the Reel for a random suggestion!
+        </h4>
+      </div>
+      <img id="reel" src="assets/reel.jpeg">
+        <!-- need the image above to trigger our randomizer -->
+    </div>
+    <!-- create an About Us -->
+    <div class="card" style="width: 81vw;">
+      <div class="card-divider">
+        <h4>About Us</h4>
+      </div>
+      <div class="card-section" >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rutrum ligula, quis accumsan ex. Mauris sed mauris eu sapien blandit posuere. Vestibulum vestibulum turpis nec dolor vestibulum egestas. Proin laoreet feugiat tellus. Integer magna lacus, elementum sit amet consequat sed, facilisis id metus. Sed fermentum auctor nisi et tempus. Curabitur eget risus laoreet, sagittis metus scelerisque, pharetra sapien. In ornare interdum eleifend.</p>
+      </div>
+    </div>
+    <!-- footer with copyight -->
+    <footer>
+      © MovieMadness
+    </footer>
+  </div>
+  </div>
 
-    <script src="./Assets/js/vendor/jquery.js"></script>
-    <script src="./Assets/js/vendor/what-input.js"></script>
-    <script src="./Assets/js/vendor/foundation.js"></script>
-    <script src="./Assets/js/app.js"></script>
-  </body>
+
+  <script src="./Assets/js/vendor/jquery.js"></script>
+  <script src="./Assets/js/vendor/what-input.js"></script>
+  <script src="./Assets/js/vendor/foundation.js"></script>
+  <script src="./Assets/js/app.js"></script>
+</body>
+
 </html>
