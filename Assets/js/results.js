@@ -1,4 +1,4 @@
-
+let listCont = document.querySelector('#list-container');
 
 function makeListCard(arrInd){ //what is feeding into here is the object that is stored within the array index location
     let movieObj = arrInd       //the object fed into the fxn
@@ -37,7 +37,7 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         let createH5 = document.createElement('h5');
         let infoP = document.createElement('p');
         let movieBox = document.createElement('div');
-        let listCont = document.querySelector('#list-container');
+
         
         createH4.textContent = movieObj.title;
         createH5.textContent = 'released ' + releaseYear + ' | ' + genreArr + '';
@@ -51,8 +51,9 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         
 };
 
-window.onload = (event) =>{
+window.onload = () =>{
     let movieObjects = JSON.parse(localStorage.getItem('movieObjects'));
+    listCont.innerHTML = '';
     for (let i=0; i< movieObjects.length; i++){      //for each of the first 5 movies on the list
     makeListCard(movieObjects[i])
     }
