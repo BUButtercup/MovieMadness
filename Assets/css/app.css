@@ -35,3 +35,14 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+#disney, #hbo, #hulu, #netflix {
+    max-height: 100px;
+    max-width: 100px;
+
+}
+
+#stream {
+    max-width: 10vw;
+    max-height: ;
+}
