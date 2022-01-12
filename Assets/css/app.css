@@ -16,6 +16,14 @@ body {
     color: var(--whiteFont);
 }
 
+.top-bar a {
+    color: var(--whiteFont);
+}
+
+.top-bar a:visited {
+    color: var(--whiteFont);
+}
+
 .dropdown {
     color: var(--darkFont);
 }
@@ -36,13 +44,13 @@ body {
     margin-right: auto;
 }
 
-#disney, #hbo, #hulu, #netflix {
+#disney, #amazon, #hulu, #netflix {
     max-height: 100px;
     max-width: 100px;
-
 }
 
 #stream {
     max-width: 10vw;
-    max-height: ;
+    max-height: 80vh;
+    background-color: var(--dark);
 }
