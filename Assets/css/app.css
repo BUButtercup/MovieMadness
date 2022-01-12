@@ -11,8 +11,18 @@ body {
     color: var(--whiteFont);
 }
 
+
+
 .top-bar {
     background-color: var(--dark);
+    color: var(--whiteFont);
+}
+
+.top-bar a {
+    color: var(--whiteFont);
+}
+
+.top-bar a:visited {
     color: var(--whiteFont);
 }
 

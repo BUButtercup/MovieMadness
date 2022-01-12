@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MovieMadness</title>
+  <link rel="stylesheet" href="yearpicker.css">
   <link rel="stylesheet" href="./Assets/css/foundation.css">
   <link rel="stylesheet" href="./Assets/css/app.css">
 </head>
@@ -24,10 +25,11 @@
 
   <!-- container for image below header -->
   <div class="card">
-    <img id="banner" src="Assets/banner.jpeg" alt="banner image">  <!--Added alt attribute-->
+    <img id="banner" src="Assets/banner.jpeg" alt="banner image">
+    <!--Added alt attribute-->
   </div>
 
-<!-- container for body -->
+  <!-- container for body -->
 
   <!-- container between baner and search bar -->
   <div class="grid-container">
@@ -37,46 +39,56 @@
       </div>
     </div>
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-7 cell">
-          <input id ="userInput" type="search" placeholder="Search here...">  
-        </div>
-        <div class="large-2 cell">
-          <ul id = "genreDropdown" class="dropdown menu" data-dropdown-menu>
-            <li>
-              <a href="#">Genre (optional)</a>
-              <ul class="menu">
-                <!-- callimng function getMovieByGenre -->
-                <li><a href="#" onclick="getMovieByGenre('28'); return false;">Action</a></li>
-                <li><a href="#" onclick="getMovieByGenre('12'); return false;">Adventure</a></li>
-                <li><a href="#" onclick="getMovieByGenre('16'); return false;">Animation</a></li>
-                <li><a href="#" onclick="getMovieByGenre('35'); return false;">Comedy</a></li>
-                <li><a href="#" onclick="getMovieByGenre('80'); return false;">Crime</a></li>
-                <li><a href="#" onclick="getMovieByGenre('99'); return false;">Documentary</a></li>
-                <li><a href="#" onclick="getMovieByGenre('18'); return false;">Drama</a></li>
-                <li><a href="#" onclick="getMovieByGenre('10751'); return false;">Family</a></li>
-                <li><a href="#" onclick="getMovieByGenre('14'); return false;">Fanatasy</a></li>
-                <li><a href="#" onclick="getMovieByGenre('36'); return false;">History</a></li>
-                <li><a href="#" onclick="getMovieByGenre('27'); return false;">Horror</a></li>
-                <li><a href="#" onclick="getMovieByGenre('10402'); return false;">Music</a></li>
-                <li><a href="#" onclick="getMovieByGenre('9648'); return false;">Mystery</a></li>
-                <li><a href="#" onclick="getMovieByGenre('10749'); return false;">Romance</a></li>
-                <li><a href="#" onclick="getMovieByGenre('878'); return false;">Sci-Fi</a></li>
-                <li><a href="#" onclick="getMovieByGenre('10770'); return false;">TV Movie</a></li>
-                <li><a href="#" onclick="getMovieByGenre('53'); return false;">Thriller</a></li>
-                <li><a href="#" onclick="getMovieByGenre('10752'); return false;">War</a></li>
-                <li><a href="#" onclick="getMovieByGenre('37'); return false;">Western</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="large-2 cell">  
-          <ul class="dropdown menu" data-dropdown-menu>
+
+
+
+
+    <div class="grid-x grid-padding-x">
+
+      <div class="large-2 cell">
+        <ul class="vertical menu drilldown" data-drilldown>
+          <li><a href="#">Title</a></li>
+          <li>
+            <a href="#">Genre</a>
+            <ul class="menu vertical nested">
+              <!-- calling function getMovieByGenre -->
+              <li><a href="#" onclick="getMovieByGenre('28'); return false;">Action</a></li>
+              <li><a href="#" onclick="getMovieByGenre('12'); return false;">Adventure</a></li>
+              <li><a href="#" onclick="getMovieByGenre('16'); return false;">Animation</a></li>
+              <li><a href="#" onclick="getMovieByGenre('35'); return false;">Comedy</a></li>
+              <li><a href="#" onclick="getMovieByGenre('80'); return false;">Crime</a></li>
+              <li><a href="#" onclick="getMovieByGenre('99'); return false;">Documentary</a></li>
+              <li><a href="#" onclick="getMovieByGenre('18'); return false;">Drama</a></li>
+              <li><a href="#" onclick="getMovieByGenre('10751'); return false;">Family</a></li>
+              <li><a href="#" onclick="getMovieByGenre('14'); return false;">Fanatasy</a></li>
+              <li><a href="#" onclick="getMovieByGenre('36'); return false;">History</a></li>
+              <li><a href="#" onclick="getMovieByGenre('27'); return false;">Horror</a></li>
+              <li><a href="#" onclick="getMovieByGenre('10402'); return false;">Music</a></li>
+              <li><a href="#" onclick="getMovieByGenre('9648'); return false;">Mystery</a></li>
+              <li><a href="#" onclick="getMovieByGenre('10749'); return false;">Romance</a></li>
+              <li><a href="#" onclick="getMovieByGenre('878'); return false;">Sci-Fi</a></li>
+              <li><a href="#" onclick="getMovieByGenre('10770'); return false;">TV Movie</a></li>
+              <li><a href="#" onclick="getMovieByGenre('53'); return false;">Thriller</a></li>
+              <li><a href="#" onclick="getMovieByGenre('10752'); return false;">War</a></li>
+              <li><a href="#" onclick="getMovieByGenre('37'); return false;">Western</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="large-7 cell">
+        <input id="userInput" type="search" placeholder="Search here...">
+      </div>
+    </div>
+
+    
+      <!-- Holding off on adding year -->
+
+      <!-- <ul class="dropdown menu" data-dropdown-menu>
             <li>
               <a href="#">Year (optional)</a>
               <ul class="menu">
-                <!-- Calling function getMovieByYear -->
-                <li><a href="#" onclick="getMovieByYear('1995'); return false;">1995</a></li>
+                Calling function getMovieByYear  -->
+      <!-- <li><a href="#" onclick="getMovieByYear('1995'); return false;">1995</a></li>
                 <li><a href="#" onclick="getMovieByYear('1996'); return false;">1996</a></li>
                 <li><a href="#" onclick="getMovieByYear('1997'); return false;">1997</a></li>
                 <li><a href="#" onclick="getMovieByYear('1998'); return false;">1998</a></li>
@@ -84,13 +96,11 @@
               </ul>
             </li>
           </ul>
-        </div>
-        <div class="large-1">
-          <button type="button" id= "btn" class="button">Search</button>
-        </div>
-      </div>
+        </div> -->
+
+
       <div class="large-1">
-        <button type="button" class="button">Search</button>
+        <button type="button" id="btn" class="button">Search</button>
       </div>
     </div>
 
@@ -98,19 +108,24 @@
     <div class="card" style="width: 81vw;">
       <div class="card-section">
         <h4>Use the search bar above to find your favorite movie! You can search by title, genre and year. <br>
-        If you're not sure what you want to watch, click below to Spin the Reel for a random suggestion!
+          If you're not sure what you want to watch, click below to Spin the Reel for a random suggestion!
         </h4>
       </div>
-      <img id="reel" src="assets/reel.jpeg" alt="reel image">   <!--Added alt attribute-->
-        <!-- need the image above to trigger our randomizer -->
+      <img id="reel" src="assets/reel.jpeg" alt="reel image">
+      <!--Added alt attribute-->
+      <!-- need the image above to trigger our randomizer for staff suggestions -->
     </div>
     <!-- create an About Us -->
     <div class="card" style="width: 81vw;">
       <div class="card-divider">
         <h4>About Us</h4>
       </div>
-      <div class="card-section" >
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rutrum ligula, quis accumsan ex. Mauris sed mauris eu sapien blandit posuere. Vestibulum vestibulum turpis nec dolor vestibulum egestas. Proin laoreet feugiat tellus. Integer magna lacus, elementum sit amet consequat sed, facilisis id metus. Sed fermentum auctor nisi et tempus. Curabitur eget risus laoreet, sagittis metus scelerisque, pharetra sapien. In ornare interdum eleifend.</p>
+      <div class="card-section">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rutrum ligula, quis accumsan ex.
+          Mauris sed mauris eu sapien blandit posuere. Vestibulum vestibulum turpis nec dolor vestibulum egestas.
+          Proin laoreet feugiat tellus. Integer magna lacus, elementum sit amet consequat sed, facilisis id metus. Sed
+          fermentum auctor nisi et tempus. Curabitur eget risus laoreet, sagittis metus scelerisque, pharetra sapien.
+          In ornare interdum eleifend.</p>
       </div>
     </div>
     <!-- footer with copyight -->
@@ -121,6 +136,8 @@
   </div>
 
 
+  <script src="/path/to/cdn/jquery.slim.min.js"></script>
+  <script src="yearpicker.js" async></script>
   <script src="./Assets/js/vendor/jquery.js"></script>
   <script src="./Assets/js/vendor/what-input.js"></script>
   <script src="./Assets/js/vendor/foundation.js"></script>
