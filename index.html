@@ -24,7 +24,7 @@
 
   <!-- container for image below header -->
   <div class="card">
-    <img id="banner" src="Assets/banner.jpeg">
+    <img id="banner" src="Assets/banner.jpeg" alt="banner image">  <!--Added alt attribute-->
   </div>
 
 <!-- container for body -->
@@ -39,32 +39,33 @@
 
       <div class="grid-x grid-padding-x">
         <div class="large-7 cell">
-          <input id ="userInput" type="search" placeholder="Search here...">
+          <input id ="userInput" type="search" placeholder="Search here...">  
         </div>
         <div class="large-2 cell">
-          <ul id = "dropdown" class="dropdown menu" data-dropdown-menu>
+          <ul id = "genreDropdown" class="dropdown menu" data-dropdown-menu>
             <li>
               <a href="#">Genre (optional)</a>
               <ul class="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Adventure</a></li>
-                <li><a href="#">Animation</a></li>
-                <li><a href="#">Comedy</a></li>
-                <li><a href="#">Crime</a></li>
-                <li><a href="#">Documentary</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Family</a></li>
-                <li><a href="#">Fanatasy</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Horror</a></li>
-                <li><a href="#">Music</a></li>
-                <li><a href="#">Mystery</a></li>
-                <li><a href="#">Romance</a></li>
-                <li><a href="#">Sci-Fi</a></li>
-                <li><a href="#">TV Movie</a></li>
-                <li><a href="#">Thriller</a></li>
-                <li><a href="#">War</a></li>
-                <li><a href="#">Western</a></li>
+                <!-- callimng function getMovieByGenre -->
+                <li><a href="#" onclick="getMovieByGenre('28'); return false;">Action</a></li>
+                <li><a href="#" onclick="getMovieByGenre('12'); return false;">Adventure</a></li>
+                <li><a href="#" onclick="getMovieByGenre('16'); return false;">Animation</a></li>
+                <li><a href="#" onclick="getMovieByGenre('35'); return false;">Comedy</a></li>
+                <li><a href="#" onclick="getMovieByGenre('80'); return false;">Crime</a></li>
+                <li><a href="#" onclick="getMovieByGenre('99'); return false;">Documentary</a></li>
+                <li><a href="#" onclick="getMovieByGenre('18'); return false;">Drama</a></li>
+                <li><a href="#" onclick="getMovieByGenre('10751'); return false;">Family</a></li>
+                <li><a href="#" onclick="getMovieByGenre('14'); return false;">Fanatasy</a></li>
+                <li><a href="#" onclick="getMovieByGenre('36'); return false;">History</a></li>
+                <li><a href="#" onclick="getMovieByGenre('27'); return false;">Horror</a></li>
+                <li><a href="#" onclick="getMovieByGenre('10402'); return false;">Music</a></li>
+                <li><a href="#" onclick="getMovieByGenre('9648'); return false;">Mystery</a></li>
+                <li><a href="#" onclick="getMovieByGenre('10749'); return false;">Romance</a></li>
+                <li><a href="#" onclick="getMovieByGenre('878'); return false;">Sci-Fi</a></li>
+                <li><a href="#" onclick="getMovieByGenre('10770'); return false;">TV Movie</a></li>
+                <li><a href="#" onclick="getMovieByGenre('53'); return false;">Thriller</a></li>
+                <li><a href="#" onclick="getMovieByGenre('10752'); return false;">War</a></li>
+                <li><a href="#" onclick="getMovieByGenre('37'); return false;">Western</a></li>
               </ul>
             </li>
           </ul>
@@ -74,12 +75,12 @@
             <li>
               <a href="#">Year (optional)</a>
               <ul class="menu">
-                <li><a href="#">1995</a></li>
-                <li><a href="#">1996</a></li>
-                <li><a href="#">1997</a></li>
-                <li><a href="#">1998</a></li>
-                <li><a href="#">1999</a></li>
-
+                <!-- Calling function getMovieByYear -->
+                <li><a href="#" onclick="getMovieByYear('1995'); return false;">1995</a></li>
+                <li><a href="#" onclick="getMovieByYear('1996'); return false;">1996</a></li>
+                <li><a href="#" onclick="getMovieByYear('1997'); return false;">1997</a></li>
+                <li><a href="#" onclick="getMovieByYear('1998'); return false;">1998</a></li>
+                <li><a href="#" onclick="getMovieByYear('1998'); return false;">1999</a></li>
               </ul>
             </li>
           </ul>
@@ -100,7 +101,7 @@
         If you're not sure what you want to watch, click below to Spin the Reel for a random suggestion!
         </h4>
       </div>
-      <img id="reel" src="assets/reel.jpeg">
+      <img id="reel" src="assets/reel.jpeg" alt="reel image">   <!--Added alt attribute-->
         <!-- need the image above to trigger our randomizer -->
     </div>
     <!-- create an About Us -->
