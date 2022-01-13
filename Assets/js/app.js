@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fetch TMDB API for genre
 var getMovieByGenre = function(genre){
     //sorting results on the basis of vote count >=10 and vote average
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&sort_by=vote_average.desc&vote_count.gte=10&with_genres='+genre)
+        fetch('https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&sort_by=vote_average.desc&vote_count.gte=10000&with_genres='+genre)
         .then(response => response.json())
     .then(data => {
         let movieObjects = Array.from(data.results)
