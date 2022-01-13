@@ -1,6 +1,6 @@
 /* color variables */
 :root {
-    --dark: rgb(0, 62, 65);
+    --dark: rgb(8, 34, 49);
     --light: rgb(39, 61, 65);
     --whiteFont: rgb(245, 245, 245);
     --darkFont: rgb(0,0,0);
@@ -54,3 +54,38 @@ body {
     max-height: 80vh;
     background-color: var(--dark);
 }
+
+#dropdownHeight {
+    max-height: 20px;
+    overflow: scroll;
+}
+
+#stylingCard {
+    display: inline-block;
+    background-color: var(--dark);
+    color: var(--whiteFont);
+    border: 5px solid rgb(245, 245, 245);
+    padding: 5px;
+    margin: 20px;
+}
+
+#cardTitle {
+    background-color: var(--dark);
+    color: var(--whiteFont);
+    font-size: 30px;
+    padding: 5px;
+}
+
+#cardImg {
+    padding: 3px;
+}
+
+#stream {
+    display: inline-block;
+}
+
+#orbitStyling {
+    max-width: 100vw;
+    max-height: 25vw;
+}
+
