@@ -1,26 +1,3 @@
-$(document).foundation()
-
-// dropdown
-// $('.dropdown-trigger').dropdown();
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var options = {
-        dropdownOptions: {
-            alignment: 'bottom',
-            hover: false,
-            coverTrigger: false,
-            closeOnClick: true
-        }
-    }
-    //var instances = M.Dropdown.init(elems, options);
-});
-
-
-
 
 // Fetch TMDB API for genre
 var getMovieByGenre = function(genre){
@@ -30,7 +7,7 @@ var getMovieByGenre = function(genre){
     .then(data => {
         let movieObjects = Array.from(data.results)
         //console.log(movieObjects)
-        movieObjects = movieObjects.slice(0, 5); //cutting it down to an array of 5 movie objects
+        movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
         console.log(movieObjects);
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
     });
