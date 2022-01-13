@@ -1,3 +1,4 @@
+$(document).foundation()
 
 // Fetch TMDB API for genre
 var getMovieByGenre = function(genre){
