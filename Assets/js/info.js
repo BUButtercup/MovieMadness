@@ -21,11 +21,13 @@ let storedOver = storedMovie[0].overview;
 
 let getMovieCast = function(){
     let movieID = storedMovie[0].id;
-    fetch('https://api.themoviedb.org/3/discover/movie/' + movieID + '/credits?api_key=734711869501c48d5ea1cb162098c006&')
+    fetch('https://api.themoviedb.org/3/movie/1930/credits?api_key=734711869501c48d5ea1cb162098c006&')
     .then(response => response.json())
         .then(data => {
-            console.log(data.results);
+            console.log(data);
+            let 
         })
+
 };
 
 let posterID = storedMovie[0].poster_path;                                    //pulling and formatting pics
@@ -37,3 +39,5 @@ poster.setAttribute('style', 'width: 100px; height: 300px');
 picBox.appendChild(poster);
 movieTitle.textContent = storedTitle;
 movieOver.textContent = storedOver;
+
+getMovieCast();
