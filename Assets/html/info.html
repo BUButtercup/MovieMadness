@@ -26,31 +26,36 @@
 
   <!-- container for movie info -->
   <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <h1>Movie Title</h1>
+    <section id="movie-card">
+      <div class=""id="pic-box"></div>
+      <div id="text-box">
+        <div class="grid-x grid-padding-x">
+          <div class="large-12 cell">
+            <h1 >Movie Title</h1>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-section">
+            <h4 id="title-text">Title<span id="year-gen"></span></h4>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-section">
+            <p id="cast">Director & Cast</p>
+          </div>
+        </div>
+        <!-- <div class="card">
+          <div class="card-section">
+            <p id='ad-info'>Addt'l info</p>
+          </div>
+        </div> -->
+        <div class="card">
+          <div class="card-section">
+            <p id="over">Description of film</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-section">
-        <p>Title</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-section">
-        <p>Director & Cast</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-section">
-        <p>Addt'l info</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-section">
-        <p>Description of film</p>
-      </div>
-    </div>
+    </section>
 
     <!-- Where to watch container -->
       <div class="card" id="stream">
@@ -108,7 +113,7 @@
     <script src="../js/vendor/jquery.js"></script>
     <script src="../js/vendor/what-input.js"></script>
     <script src="../js/vendor/foundation.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="../js/info.js"></script>
 </body>
 
 </html>

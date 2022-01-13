@@ -8,12 +8,12 @@ var getMovieByGenre = function(genre){
     .then(data => {
         let movieObjects = Array.from(data.results)
         //console.log(movieObjects)
-        movieObjects = movieObjects.slice(0, 5); //cutting it down to an array of 5 movie objects
+        movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
         console.log(movieObjects);
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
     });
     //open up the result page
-    window.open('./Assets/html/results.html');
+    window.load('./Assets/html/results.html');
 };
 // Fetch TMDB API for year
 // var getMovieByYear = function(year){
@@ -29,6 +29,6 @@ var getMovieByTitle = function(){
         .then(response => response.json())
     .then(data => console.log(data));
      //open up the result page
-     window.open('./Assets/html/results.html');
+     window.load('./Assets/html/results.html');
     }
 $("#btn").on( "click",getMovieByTitle);
