@@ -6,14 +6,15 @@ var getMovieByGenre = function(genre){
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&sort_by=vote_average.desc&vote_count.gte=10000&with_genres='+genre)
         .then(response => response.json())
     .then(data => {
+        console.log(genre)
         let movieObjects = Array.from(data.results)
         //console.log(movieObjects)
         movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
         console.log(movieObjects);
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
+        window.location.assign('./Assets/html/results.html');
     });
     //open up the result page
-    window.load('./Assets/html/results.html');
 };
 // Fetch TMDB API for year
 // var getMovieByYear = function(year){
@@ -29,6 +30,6 @@ var getMovieByTitle = function(){
         .then(response => response.json())
     .then(data => console.log(data));
      //open up the result page
-     window.load('./Assets/html/results.html');
+     window.location.assign('./Assets/html/results.html');
     }
 $("#btn").on( "click",getMovieByTitle);
