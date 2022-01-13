@@ -27,8 +27,16 @@ var getMovieByTitle = function(){
     var userInputEl = $("#userInput").val();
         fetch('https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=backdrop_path&query='+userInputEl)
         .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+        console.log(data);
+        let movieObjects = Array.from(data.results)
+        //console.log(movieObjects)
+        movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
+        console.log(movieObjects);
+        localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
      //open up the result page
      window.load('./Assets/html/results.html');
-    }
+    });
+}
+
 $("#btn").on( "click",getMovieByTitle);
