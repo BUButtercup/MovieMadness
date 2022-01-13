@@ -89,3 +89,21 @@ body {
     max-height: 25vw;
 }
 
+#moviePoster {
+    display: inline-block;
+    background-color: var(--dark);
+    border: 5px solid rgb(245, 245, 245);
+    padding: 5px;
+    margin: 20px;
+    height: 500px;
+    width: 100px;
+}
+
+#text-box{
+    height: 300px;
+    width: 800px;
+}
+
+#over {
+    height: 200px;
+}
