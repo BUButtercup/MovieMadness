@@ -37,5 +37,6 @@ var getMovieByTitle = function(){
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
      //open up the result page
      window.location.assign('./Assets/html/results.html');
-    }
+    })
+};
 $("#btn").on( "click",getMovieByTitle);
