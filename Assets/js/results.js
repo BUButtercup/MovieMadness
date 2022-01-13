@@ -4,11 +4,16 @@ let movieObjects = JSON.parse(localStorage.getItem('movieObjects'));
 // let getInfoBtns = document.querySelectorAll('.movieCard');;
 
 
-// function goToInfo(){
-//     console.log('hi');
+function loadInfo(){
+    console.log('hi');
 
     
-// }
+}
+
+listCont.click(function (event) {  
+    console.log("test")
+    console.log(event.target)
+})
 
 function makeListCard(arrInd){ //what is feeding into here is the object that is stored within the array index location
     let movieObj = arrInd       //the object fed into the fxn
