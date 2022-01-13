@@ -38,10 +38,11 @@ body {
 }
 
 #reel {
-    height: 500px;
-    width: 800px;
+    height: 300px;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--dark);
 }
 
 #disney, #amazon, #hulu, #netflix {
@@ -95,7 +96,7 @@ body {
     border: 5px solid rgb(245, 245, 245);
     padding: 5px;
     margin: 20px;
-    height: 500px;
+    height: 450px;
     width: 100px;
 }
 
@@ -106,4 +107,16 @@ body {
 
 #over {
     height: 200px;
+}
+
+#aboutSect {
+    background-color: var(--dark);
+    color: var(--whiteFont);
+    border: 5px solid whitesmoke;
+}
+
+#aboutUs{
+    background-color: rgba(245, 245, 245, 0.26);
+    color: var(--whiteFont);
+    border: 5px solid whitesmoke;
 }
