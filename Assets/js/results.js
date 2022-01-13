@@ -70,7 +70,8 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         // };
 
         createH4.textContent = movieObj.title;
-        createH5.textContent = 'released ' + releaseYear + ' | ' + genres + '';
+        let subText = 'released ' + releaseYear + ' | ' + genres + '';
+        createH5.textContent = subText;
         infoP.textContent = movieObj.overview;
         movieBox.appendChild(createH4);
         movieBox.appendChild(createH5);
