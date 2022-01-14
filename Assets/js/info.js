@@ -1,12 +1,13 @@
 let picBox = document.querySelector('#pic-box');
 let movieTitle = document.querySelector('#title-text');
-let movieYearGen = document.querySelector('#year-gen');
 let movieCast = document.querySelector('#cast');
 let movieAdInfo = document.querySelector('#ad-info');
 let movieOver = document.querySelector('#over');
 let movieCard = document.querySelector('#movie-card');
+let titleBox = document.getElementById('titlebox')
+let YGBox = document.getElementById('year-gen');
 let staffPicks = [
-    "861345", // Free guy
+    "550988", // Free guy
     "105864", // The good dinosaur
     "10637", // Remember the Titans
     "102899", // Ant Man
@@ -18,7 +19,7 @@ let staffPicks = [
     "324857", // Spiderman, spiderverse
     "9806", // Incredibles
     "129", // Spirited Away
-    "98566", // TMNT
+    "1498", // TMNT
     "546554", // Knives Out
     "2493",  // Princess Bride
     "314365", // Spotlight
@@ -31,9 +32,36 @@ movieCard.setAttribute('style', 'display:flex');
 
 let storedMovie = JSON.parse(localStorage.getItem('movieObject')); 
 // in future local from results will be called storedMovie
-let storedTitle = storedMovie.title;
-let storedOver = storedMovie.overview;
-let movieID = storedMovie.id;
+let storedTitle = storedMovie[0].title;
+let storedOver = storedMovie[0].overview;
+let movieID = storedMovie[0].id;
+let storedYGBox = storedMovie[1];
+let movieYG = '';
+
+function getStoredYearGenre(){
+    const storedYG = [];
+
+    for (let i=0; i<storedYGBox.length; i++){
+        let newArr = [storedYGBox[i].title, storedYGBox[i].relGen];
+        storedYG.push(newArr);
+    }
+    for (let i=0; i < storedYG.length; i++){
+        let sYG = storedYG[i];
+        if (storedTitle === sYG[0]){
+        YGBox.textContent = sYG[1];
+        }
+    }
+    // titleBox.setAttribute('style', 'display:flex; align-items: center')
+    movieTitle.setAttribute('style', 'margin-top: -10px; margin-bottom: -5px; font-size: 2em')
+    YGBox.setAttribute('style', 'margin-bottom: -10px; font-style: italic')
+
+    console.log(storedYG);
+    console.log(movieYG);
+}
+
+
+
+
 
 let getMovieCast = function(){
     fetch('https://api.themoviedb.org/3/movie/' + movieID + '/credits?api_key=734711869501c48d5ea1cb162098c006&')
@@ -73,12 +101,10 @@ let getMovieCast = function(){
 
 };
 
-let posterID = storedMovie.poster_path;                                    //pulling and formatting pics
+let posterID = storedMovie[0].poster_path;                                    //pulling and formatting pics
 let moviePoster = 'https://image.tmdb.org/t/p/original/' + posterID;
 let poster = document.getElementById('pic-box')
 poster.setAttribute('src', moviePoster);
-
-// picBox.appendChild(poster);
 
 movieTitle.textContent = storedTitle;
 movieOver.textContent = storedOver;
@@ -89,8 +115,8 @@ var randomMovie = function() {
     .then(response => response.json())
         .then(data => {
             console.log(data);
-            localStorage.setItem("movieObject", JSON.stringify(data));
-            localStorage.setItem("testID", movieId)
+            storageBox = [data, movieID] //created this variable to match array style of normal movieObject
+            localStorage.setItem("movieObject", JSON.stringify(storageBox));
             window.location.assign("./info.html")
         })
 }
@@ -132,5 +158,6 @@ cocktailBtn.click(cocktail);
 
 // get movie cast since not contained in movie object
 getMovieCast();
+getStoredYearGenre()
 
 

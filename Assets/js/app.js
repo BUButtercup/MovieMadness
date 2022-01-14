@@ -1,9 +1,29 @@
 $(document).foundation()
+let staffPicks = [
+    "861345", // Free guy
+    "105864", // The good dinosaur
+    "10637", // Remember the Titans
+    "102899", // Ant Man
+    "926", // Galaxy Quest
+    "264660", // Ex Machina
+    "318846", // The Big Short
+    "157336",  // interstellar
+    "18240", // The proposal
+    "324857", // Spiderman, spiderverse
+    "9806", // Incredibles
+    "129", // Spirited Away
+    "1498", // TMNT
+    "546554", // Knives Out
+    "2493",  // Princess Bride
+    "314365", // Spotlight
+    "60308", // Moneyball
+    "530385" // MidSommar
+]
 
 // Fetch TMDB API for genre
 var getMovieByGenre = function(genre){
     //sorting results on the basis of vote count >=10 and vote average
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&sort_by=vote_average.desc&vote_count.gte=10000&with_genres='+genre)
+        fetch('https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&sort_by=vote_average.desc&vote_count.gte=1000&with_genres='+genre)
         .then(response => response.json())
     .then(data => {
         console.log(genre)
@@ -41,3 +61,20 @@ var getMovieByTitle = function(){
     })
 };
 $("#btn").on( "click",getMovieByTitle);
+
+var randomMovie = function() {
+    let movieId = staffPicks[Math.floor(Math.random()*staffPicks.length)]
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=734711869501c48d5ea1cb162098c006&language=en-US`)
+    .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            storageBox = [data, data.id] //created this variable to match array style of normal movieObject
+            localStorage.setItem("movieObject", JSON.stringify(storageBox));
+            window.location.assign('./Assets/html/info.html')
+        })
+}
+
+// event listener for randomizer
+let randomizer = $("#reel")
+console.log(randomizer)
+randomizer.click(randomMovie);

@@ -1,14 +1,27 @@
 let listCont = document.querySelector('#list-container');
 let genreCats = [{id: 28, name: 'Action'}, {id: 12, name: 'Adventure'}, {id: 16, name: 'Animation'}, {id: 35, name: 'Comedy'}, {id: 80, name: 'Crime'}, {id: 99, name: 'Documentary'}, {id: 18, name: 'Drama'}, {id: 10751, name: 'Family'}, {id: 14, name: 'Fantasy'}, {id: 36, name: 'History'}, {id: 27, name: 'Horror'}, {id: 10402, name: 'Music'}, {id: 9648, name: 'Mystery'}, {id: 10749, name: 'Romance'}, {id: 878, name: 'Sci Fi'}, {id: 10770, name: 'TV Movie'}, {id: 53, name: 'Thriller'}, {id: 10752, name: 'War'}, {id: 37, name: 'Western'}];
-let movieObjects = JSON.parse(localStorage.getItem('movieObjects'));
+let movieObjects = Array.from(JSON.parse(localStorage.getItem('movieObjects')));
 // let getInfoBtns = document.querySelectorAll('.movieCard');;
+let subTextBox = [];
 
 
 function loadInfo(index){
     console.log(movieObjects)
+    subTextBox = Array.from(subTextBox.slice(0, 10));
+    console.log(subTextBox)
+    for (let i=0; i<subTextBox.length; i++){
+        for (let j=0; j<movieObjects.length; j++){
+            if (subTextBox[i] === movieObjects[j]){
+            console.log('yes');
+            }
+        }
+    }
     console.log(index)
     console.log(movieObjects[index])
-    localStorage.setItem("movieObject", JSON.stringify(movieObjects[index]))
+
+    console.log(movieObjects[index])
+    mObj = [movieObjects[index], subTextBox]
+    localStorage.setItem("movieObject", JSON.stringify(mObj));
     window.location.assign("./info.html")
 }
 
@@ -87,15 +100,15 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         movieCard.setAttribute('class', 'movieCard');
         movieCard.setAttribute('id', arrInd); // added by henry
         movieCard.setAttribute('style', 'display:flex; align-items: center; border: 1px solid white; margin: 20px; padding: 10px')
-        // movieCard.setAttribute('onclick', 'goToInfo(event)')
-        // movieCard.onclick = (event) => {
-        //     let currentDI = event.target.getAttribute('data-index')
-        //     console.log(currentDI);
-        // };
 
         createH4.textContent = movieObj.title;
         let subText = 'released ' + releaseYear + ' | ' + genres + '';
         createH5.textContent = subText;
+        let newObj = {
+            title: movieObj.title,
+            relGen: subText
+        };
+        subTextBox.push(newObj);
         infoP.textContent = movieObj.overview;
         movieBox.appendChild(createH4);
         movieBox.appendChild(createH5);
@@ -104,62 +117,13 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         movieCard.appendChild(poster);
         movieCard.appendChild(movieBox);
 
-        // movieCard.onclick = (event) => {
-        //     let currentDI = event.target.getAttribute('data-index')
-        //     console.log(currentDI);
-        // };
-
         listCont.appendChild(movieCard);
-        // let list = Array.from(listCont);
-        // console.log(list.length);  
-        // for (let i=0; i<list.length; i++){
-        //     movieCard.setAttribute('data-index', [i]+1)
-        // }
 };
-
-function clearStorage() {
-    localStorage.clear();
-}
+console.log('stb', subTextBox);
 
 window.onload = () =>{
     listCont.innerHTML = '';
-    for (let i=0; i< movieObjects.length; i++){      //for each of the first 5 movies on the list
+    for (let i=0; i< movieObjects.length; i++){      //for each of the first 10 movies on the list
         makeListCard(i)
     } 
-    let getInfoBtns = document.querySelectorAll('.movieCard');
-    // console.log('getbtns', getInfoBtns);
-    // for (let i=0; i<getInfoBtns.length; i++){
-    //     getInfoBtns[i].setAttribute('data-index', [i]);
-        // getInfoBtns[i].setAttribute('id', [i]+1);
-    // }
-    // getInfoBtns.onclick = (event) => {
-    //     let currentDI = event.target.getAttribute('data-index')
-    //     console.log(currentDI);
-    // };
 }
-
-// clearStorage();
-
-//     console.log('getbtns', getInfoBtns);
-//     getInfoBtns.forEach(item =>{
-//         item.setAttribute('onclick', 'goToInfo())');
-//             // for (let i=0; i < getInfoBtns.length; i++){
-//             //     console.log('hi');
-//             //     if (event.target.getAttribute('data-index') == movieObjects[i]){
-//             //         localStorage.setItem('movieInfo', JSON.stringify(movieObjects[i]));
-//             //     }
-//             // }
-//         })
-//     });
-// };
-
-
-
-// function start(){
-//     // listCont.innerHTML = '';
-//     for (let i=0; i< movieObjects.length; i++){      //for each of the first 5 movies on the list
-//     makeListCard(movieObjects[i])
-//     }
-// };
-
-// start();
