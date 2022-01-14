@@ -25,7 +25,7 @@ var getMovieByGenre = function (genre) {
           localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
 
           //open up the result page
-          window.location.assign("./Assets/html/results.html");
+          window.location.assign("results.html");
         });
     });
 };
@@ -50,7 +50,7 @@ var getMovieByTitle = function () {
       console.log(movieObjects);
       localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
       //open up the result page
-      window.location.assign("./Assets/html/results.html");
+      window.location.assign("results.html");
     });
 };
 $("#btn").on("click", getMovieByTitle);
