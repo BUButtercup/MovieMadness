@@ -28,10 +28,6 @@ let staffPicks = [
 
 movieCard.setAttribute('style', 'display:flex');
 let storedID = JSON.parse(localStorage.getItem('movieID')); 
-// in future local from results will be called storedMovie
-// let storedTitle = storedMovie.title;
-// let storedOver = storedMovie.overview;
-// let movieID = storedMovie.id;
 
 var getMovieInfo = function(sourceID) {
     let movieId = sourceID
