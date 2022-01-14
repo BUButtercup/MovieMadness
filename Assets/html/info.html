@@ -13,11 +13,10 @@
 <body>
   <header>
     <div class="top-bar">
-      <div class="top-bar-left text-center">
+      <div class="top-bar-left">
         <h1>
           <a href="/index.html">MovieMadness</a>
         </h1>
-        <h4>We're mad for movies!</h4>
       </div>
       <div class="top-bar-right">
       </div>
@@ -91,8 +90,10 @@
       </div>
       <div class="card-section" id="cardImg">
         <img src="../cocktail.jpeg">
-        <h4>Click 'Go!' to receive a drink suggestion.</h4>
-        <a class="button" href="#">Go!</a>
+        <h4 id="cocktailName">Click 'Go!' to receive a drink suggestion.</h4>
+        <ul id="ingredients"></ul>
+        <button class="button" id="cocktailBtn">Go!</button>
+        <h6>Source: thecocktaildb.com</h6>
       </div>
     </div>
 
@@ -104,7 +105,7 @@
       <div class="card-section" id="cardImg">
         <img src="../random.jpeg">
         <h4>Not sure what you're looking for?</h4>
-        <a class="button" href="#">Random</a>
+        <button class="button" id="randomizer">Get a Staff Pick!</button>
       </div>
     </div>
 

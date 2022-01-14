@@ -120,3 +120,7 @@ body {
     color: var(--whiteFont);
     border: 5px solid whitesmoke;
 }
+
+#ingredients {
+    list-style-type: none;
+}

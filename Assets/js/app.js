@@ -9,7 +9,7 @@ var getMovieByGenre = function(genre){
         console.log(genre)
         let movieObjects = Array.from(data.results)
         //console.log(movieObjects)
-        movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
+        movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 10 movie objects
         console.log(movieObjects);
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
        //open up the result page
