@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,26 +8,24 @@
   <link rel="stylesheet" href="../css/foundation.css">
   <link rel="stylesheet" href="../css/app.css">
 </head>
-
 <body>
   <header>
     <div class="top-bar">
       <div class="top-bar-left">
         <h1>
-          <a href="../../index.html">MovieMadness</a> <!--PR:Corrected file path-->
+          <a href="/index.html"><strong>MovieMadness</strong></a>
         </h1>
       </div>
       <div class="top-bar-right">
       </div>
     </div>
   </header>
-
   <!-- container for movie info -->
   <div class="grid-container">
     <section id="movie-card">
       <div class="card" id="moviePoster">
         <div class="card-section" id="cardImg">
-          <img id="pic-box" alt="Picbox"> <!--PR:Added alt attribute-->
+          <img id="pic-box">
         </div>
       </div>
       <!-- <div class="" id="pic-box"></div> -->
@@ -55,69 +52,47 @@
         </div>
       </div>
     </section>
-
-
-
-    <!-- Not working yet, deciding if we will do this. Maybe a future goal
-      Where to watch container -->
-    <!-- <div class="card" id="stream">
-      <div class="card-section">
-        <img src="../disneyplus.jpg" id="disney">
-      </div>
-    </div>
-    <div class="card" id="stream">
-      <div class="card-section">
-        <img src="../amazon.jpeg" id="amazon">
-      </div>
-    </div>
-    <div class="card" id="stream">
-      <div class="card-section">
-        <img src="../hulu.jpeg" id="hulu">
-      </div>
-    </div>
-    <div class="card" id="stream">
-      <div class="card-section">
-        <img src="../netflix.jpeg" id="netflix">
-      </div>
-    </div> -->
-
     <br>
-
     <!-- container for random cocktail generator -->
     <div class="card" id="stylingCard" style="width: 300px;">
       <div class="card-divider" id="cardTitle">
         Cocktail Generator
       </div>
       <div class="card-section" id="cardImg">
-        <img src="../cocktail.jpeg" alt="Cocktail">  <!--PR:Added alt attribute-->
+        <img src="../cocktail.jpeg">
         <h4 id="cocktailName">Click 'Go!' to receive a drink suggestion.</h4>
         <ul id="ingredients"></ul>
         <button class="button" id="cocktailBtn">Go!</button>
         <h6>Source: thecocktaildb.com</h6>
       </div>
     </div>
-
     <!-- container for random movie generator -->
     <div class="card" id="stylingCard" style="width: 300px;">
       <div class="card-divider" id="cardTitle">
         Random Movie
       </div>
       <div class="card-section" id="cardImg">
-        <img src="../random.jpeg" alt="Randomizer"> <!--PR:Added alt attribute-->
+        <img src="../random.jpeg">
         <h4>Not sure what you're looking for?</h4>
         <button class="button" id="randomizer">Get a Staff Pick!</button>
       </div>
     </div>
 
+    <div class="card" id="stylingCard" style="width: 300px;">
+      <div class="card-divider" id="cardTitle">
+        Movie Trailer
+      </div>
+      <div class="card-section" id="cardImg">
+        <button class="button" id="randomizer">Play</button>
+      </div>
+    </div>
     <!-- footer with copyight -->
     <footer>
       © MovieMadness
     </footer>
-
     <script src="../js/vendor/jquery.js"></script>
     <script src="../js/vendor/what-input.js"></script>
     <script src="../js/vendor/foundation.js"></script>
     <script src="../js/info.js"></script>
 </body>
-
 </html>

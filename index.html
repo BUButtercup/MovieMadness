@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,13 +9,11 @@
   <link rel="stylesheet" href="./Assets/css/foundation.css">
   <link rel="stylesheet" href="./Assets/css/app.css">
 </head>
-
 <body>
   <header>
     <div class="top-bar">
       <div class="top-bar-left text-center">
-        <h1>MovieMadness</h1>
-        <h4>We're mad for movies!</h4>
+        <h1><strong>MovieMadness</strong></h1>
       </div>
       <div class="top-bar-right">
       </div>
@@ -32,38 +29,36 @@
       <ul class="orbit-container">
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" id="orbitStyling" src="./Assets/orb.jpeg" alt="Space">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit.jpeg" alt="DC Comic Heros">
           </figure>
         </li>
         <li class="is-active orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" id="orbitStyling" src="./Assets/ca.jpeg" alt="Space">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit1.jpeg" alt="Mashup of movie posters">
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" id="orbitStyling" src="./Assets/car.jpeg" alt="Space">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit2.jpeg" alt="DC Villans and Heros">
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" id="orbitStyling" src="./Assets/caros.jpeg" alt="Space">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit3.jpeg" alt="Collage of action movies">
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit.jpeg" alt="Space">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit4.jpeg" alt="Avengers Endgame banner">
           </figure>
         </li>
       </ul>
     </div>
   </div>
-
-  <!-- container for body -->
-  <!-- container between baner and search bar -->
+  <!-- container for main content -->
   <div class="grid-container">
     <div class="grid-x grid-padding-x">
-      <div class="large-12 cell">
+      <div class="large-10 cell">
         <h1>Search a genre or movie title below!</h1>
       </div>
     </div>
@@ -98,44 +93,40 @@
         </ul>
       </div>
       <h3>OR</h3>
-      <div class="large-7 cell">
+      <div class="large-5 cell">
         <input id="userInput" type="search" placeholder="Search the title here...">
-        <button type="button" id="btn" class="button">Search</button>
+        <button type="button" id="btn" class="button" style="width:472px">Search</button>
       </div>
     </div>
     <!-- card that explains how to use the site and holds the random generator -->
     <div class="card" id="aboutSect">
       <div class="card-section">
         <h3>Use the search bar above to find your favorite title! You can search by title or pick your favorite genre.
-          <br>
-          Can decide what to watch? Click the image below and we'll 'pop' you over to some of our staff picks!
-        </h3>
+          Can't decide what to watch? <br><strong>Click the image below and we'll 'pop' you over to some of our staff picks!</strong>
+      </h3>
       </div>
-      <img id="reel" src="assets/popcorn.jpeg" alt="reel image">
-      <!-- need the image above to trigger our randomizer for staff suggestions -->
+      <img id="randomGen" src="assets/popcorn.jpeg" alt="popcorn image">
     </div>
     <!-- About Us -->
     <div class="card" id="aboutUs">
       <div class="card-section">
-        <h4>About Us</h4>
-        <p>A site made by movie-lovers, for movie-lovers! <br>
+        <h1>About Us</h1>
+        <h4>A site made by movie-lovers, for movie-lovers! <br>
           Forged in the firey underground film rings in quaint, little Seattle, MovieMadness is dedicated to making it
           easier than ever to find information about your favorite films. 4 unlikely friends came together after getting
           a small loan of $1 million dollars from their parents to build this unique service from scratch. We hope
-          you'll enjoy using this service as much as we enjoyed making it! </p>
+          you'll enjoy using this service as much as we enjoyed making it! </h4>
       </div>
     </div>
-    <!-- footer with copyight -->
+    <!-- footer with copyright -->
     <footer>
       © MovieMadness
     </footer>
   </div>
   </div>
-
   <script src="./Assets/js/vendor/jquery.js"></script>
   <script src="./Assets/js/vendor/what-input.js"></script>
   <script src="./Assets/js/vendor/foundation.js"></script>
   <script src="./Assets/js/app.js"></script>
 </body>
-
 </html>
