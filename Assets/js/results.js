@@ -4,14 +4,33 @@ let movieObjects = JSON.parse(localStorage.getItem('movieObjects'));
 // let getInfoBtns = document.querySelectorAll('.movieCard');;
 
 
-// function goToInfo(){
-//     console.log('hi');
+function loadInfo(index){
+    console.log(movieObjects)
+    console.log(index)
+    console.log(movieObjects[index])
+    localStorage.setItem("movieObject", JSON.stringify(movieObjects[index]))
+    window.location.assign("./info.html")
+}
 
+// event listener for the cards
+listCont.addEventListener("click", function (event) {
+    let element = event.target  
+    if (hasParentWithMatchingSelector(element, ".movieCard") || element.className == "movieCard") {
+        let index = element.id
+        loadInfo(index);
+    }
     
-// }
+})
 
+// returns true if the element or one of its parents has the class classname
+// taken off stackoverflow
+function hasParentWithMatchingSelector (target, selector) {
+    return [...document.querySelectorAll(selector)].some(el =>
+      el !== target && el.contains(target)
+    )
+  }
 function makeListCard(arrInd){ //what is feeding into here is the object that is stored within the array index location
-    let movieObj = arrInd       //the object fed into the fxn
+    let movieObj = movieObjects[arrInd];       //the object fed into the fxn
     let genreIDs;               //holder for the genre names that have been assigned to the movie
     let releaseYear;
     let genres = [];
@@ -47,9 +66,12 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         //vars to create elements w/ basic styling
         let createH4 = document.createElement('h4');   
         createH4.setAttribute('style', 'margin-bottom: -5px; font-weight: bold')
+        createH4.setAttribute('id', arrInd)
         let createH5 = document.createElement('h5');
+        createH5.setAttribute('id', arrInd)
         let infoP = document.createElement('p');
         infoP.setAttribute('style', 'line-height: 1.25em')
+        infoP.setAttribute('id', arrInd)
         let movieBox = document.createElement('div');
         movieBox.setAttribute('class', 'movieBox');
         movieBox.setAttribute('style', 'margin-left:10px')
@@ -58,10 +80,12 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         let moviePoster = 'https://image.tmdb.org/t/p/original/' + posterID;
         let poster = document.createElement('img')
         poster.setAttribute('src', moviePoster);
+        poster.setAttribute('id', arrInd);
         poster.setAttribute('style', 'width: 100px; height: 150px');
 
         let movieCard = document.createElement('div');
         movieCard.setAttribute('class', 'movieCard');
+        movieCard.setAttribute('id', arrInd); // added by henry
         movieCard.setAttribute('style', 'display:flex; align-items: center; border: 1px solid white; margin: 20px; padding: 10px')
         // movieCard.setAttribute('onclick', 'goToInfo(event)')
         // movieCard.onclick = (event) => {
@@ -70,7 +94,8 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         // };
 
         createH4.textContent = movieObj.title;
-        createH5.textContent = 'released ' + releaseYear + ' | ' + genres + '';
+        let subText = 'released ' + releaseYear + ' | ' + genres + '';
+        createH5.textContent = subText;
         infoP.textContent = movieObj.overview;
         movieBox.appendChild(createH4);
         movieBox.appendChild(createH5);
@@ -99,10 +124,10 @@ function clearStorage() {
 window.onload = () =>{
     listCont.innerHTML = '';
     for (let i=0; i< movieObjects.length; i++){      //for each of the first 5 movies on the list
-        makeListCard(movieObjects[i])
+        makeListCard(i)
     } 
     let getInfoBtns = document.querySelectorAll('.movieCard');
-    console.log('getbtns', getInfoBtns);
+    // console.log('getbtns', getInfoBtns);
     // for (let i=0; i<getInfoBtns.length; i++){
     //     getInfoBtns[i].setAttribute('data-index', [i]);
         // getInfoBtns[i].setAttribute('id', [i]+1);
