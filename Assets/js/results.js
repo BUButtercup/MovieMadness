@@ -10,7 +10,7 @@ function loadInfo(index){
     console.log(movieObjects[index])
     console.log(movieObjects[index].id)
     localStorage.setItem("movieID", JSON.stringify(movieObjects[index].id))
-    window.location.assign("./info.html")
+    window.location.assign("info.html")
 }
 
 // event listener for the cards
