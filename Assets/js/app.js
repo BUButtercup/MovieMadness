@@ -12,9 +12,10 @@ var getMovieByGenre = function(genre){
         movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 10 movie objects
         console.log(movieObjects);
         localStorage.setItem('movieObjects', JSON.stringify(movieObjects));
+       //open up the result page
         window.location.assign('./Assets/html/results.html');
     });
-    //open up the result page
+    
 };
 // Fetch TMDB API for year
 // var getMovieByYear = function(year){
