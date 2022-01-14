@@ -25,7 +25,7 @@
     <section id="movie-card">
       <div class="card" id="moviePoster">
         <div class="card-section" id="cardImg">
-          <img id="pic-box">
+          <img id="pic-box"  alt="Picbox"> <!--PR:Added alt attribute-->
         </div>
       </div>
       <!-- <div class="" id="pic-box"></div> -->
@@ -36,8 +36,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-section">
-            <h4 id="title-text">Title<span id="year-gen"></span></h4>
+          <div class="card-section" id="title-box">
+            <h4 id="title-text">Title</h4>
+            <span id="year-gen"></span>
           </div>
         </div>
         <div class="card">
@@ -46,8 +47,9 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-section">
+          <div class="card-section" id="overbox">
             <p id="over">Description of film</p>
+            <span id="tagline"></span>
           </div>
         </div>
       </div>
@@ -59,7 +61,7 @@
         Cocktail Generator
       </div>
       <div class="card-section" id="cardImg">
-        <img src="../cocktail.jpeg">
+        <img src="../cocktail.jpeg"  alt="Cocktail">  <!--PR:Added alt attribute-->>
         <h4 id="cocktailName">Click 'Go!' to receive a drink suggestion.</h4>
         <ul id="ingredients"></ul>
         <button class="button" id="cocktailBtn">Go!</button>
@@ -72,7 +74,7 @@
         Random Movie
       </div>
       <div class="card-section" id="cardImg">
-        <img src="../random.jpeg">
+        <img src="../random.jpeg"  alt="Randomizer"> <!--PR:Added alt attribute-->
         <h4>Not sure what you're looking for?</h4>
         <button class="button" id="randomizer">Get a Staff Pick!</button>
       </div>
