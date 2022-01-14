@@ -1,0 +1,29 @@
+
+.movieCard {
+    background-color: var(--dark);
+    width: 70%;
+}
+
+.movieCard:hover {
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+.grid-container {
+    width: 80vw;
+}
+
+main {
+    background-color: white;
+}
+
+main h1 {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    color: var(--dark);
+}
+
+section {
+    margin-top: 40px;
+}
+

@@ -1,7 +1,7 @@
 /* color variables */
 :root {
     --dark: rgb(8, 34, 49);
-    --light: rgb(39, 61, 65);
+    --light: rgb(85, 123, 129);
     --whiteFont: rgb(245, 245, 245);
     --darkFont: rgb(0,0,0);
 }
@@ -18,10 +18,17 @@ body {
 
 .top-bar a {
     color: var(--whiteFont);
+    border-bottom: 2px solid white;
+    font-size: 24px;
 }
 
 .top-bar a:visited {
     color: var(--whiteFont);
+}
+
+.top-bar a:hover {
+    color: skyblue;
+    border-bottom: none;
 }
 
 .dropdown {
@@ -124,3 +131,4 @@ body {
 #ingredients {
     list-style-type: none;
 }
+
