@@ -1,9 +1,8 @@
 /* color variables */
 :root {
     --dark: rgb(8, 34, 49);
-    --light: rgb(39, 61, 65);
+    --light: rgba(245, 245, 245, 0.26);
     --whiteFont: rgb(245, 245, 245);
-    --darkFont: rgb(0,0,0);
 }
 
 body {
@@ -11,25 +10,16 @@ body {
     color: var(--whiteFont);
 }
 
-.top-bar {
-    background-color: var(--dark);
-    color: var(--whiteFont);
+footer {
+    text-align: center;
 }
 
-.top-bar a {
-    color: var(--whiteFont);
+.top-bar {
+    background-color: var(--dark);
 }
 
 .top-bar a:visited {
     color: var(--whiteFont);
-}
-
-.dropdown {
-    color: var(--darkFont);
-}
-
-.dropdown li:hover {
-    background-color: var(--light);
 }
 
 #banner {
@@ -37,22 +27,13 @@ body {
     width: 100vw;
 }
 
-#reel {
+#randomGen {
     height: 300px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--dark);
-}
-
-#disney, #amazon, #hulu, #netflix {
-    max-height: 100px;
-    max-width: 100px;
-}
-
-#stream {
-    max-width: 10vw;
-    max-height: 80vh;
+    padding: 10px;
+    margin-bottom: 20px;
     background-color: var(--dark);
 }
 
@@ -73,16 +54,12 @@ body {
 #cardTitle {
     background-color: var(--dark);
     color: var(--whiteFont);
-    font-size: 30px;
+    font-åsize: 30px;
     padding: 5px;
 }
 
 #cardImg {
     padding: 3px;
-}
-
-#stream {
-    display: inline-block;
 }
 
 #orbitStyling {
@@ -109,14 +86,8 @@ body {
     height: 200px;
 }
 
-#aboutSect {
-    background-color: var(--dark);
-    color: var(--whiteFont);
-    border: 5px solid whitesmoke;
-}
-
-#aboutUs{
-    background-color: rgba(245, 245, 245, 0.26);
+#aboutSect, #aboutUs {
+    background-color: var(--light);
     color: var(--whiteFont);
     border: 5px solid whitesmoke;
 }
