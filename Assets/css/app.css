@@ -1,7 +1,7 @@
 /* color variables */
 :root {
-    --dark: rgb(23, 63, 87);
-    --light: rgb(85, 123, 129);
+    --dark: rgb(8, 34, 49);
+    --light: rgba(245, 245, 245, 0.26);
     --whiteFont: rgb(245, 245, 245);
 }
 body {
@@ -13,29 +13,10 @@ footer {
 }
 .top-bar {
     background-color: var(--dark);
-    color: var(--whiteFont);
-}
-
-.top-bar a {
-    color: var(--whiteFont);
-    font-size: 36px;
 }
 .top-bar a:visited {
     color: var(--whiteFont);
 }
-
-.top-bar a:hover {
-    color: skyblue;
-}
-
-.dropdown {
-    color: var(--darkFont);
-}
-
-.dropdown li:hover {
-    background-color: var(--light);
-}
-
 #banner {
     height: 250px;
     width: 100vw;
@@ -75,7 +56,15 @@ footer {
     max-width: 100vw;
     max-height: 25vw;
 }
-
+#moviePoster {
+    display: inline-block;
+    background-color: var(--dark);
+    border: 5px solid rgb(245, 245, 245);
+    padding: 5px;
+    margin: 20px;
+    height: 450px;
+    width: 100px;
+}
 #text-box{
     height: 300px;
     width: 800px;
@@ -91,4 +80,3 @@ footer {
 #ingredients {
     list-style-type: none;
 }
-
