@@ -1,0 +1,25 @@
+.grid-container {
+    background-color: var(--dark);
+}
+
+main {
+    background-color: black;
+}
+
+#movie-card {
+    padding: 30px;
+}
+
+#moviePoster {
+    display: inline-block;
+    background-color: var(--dark);
+    border: 5px solid rgb(245, 245, 245);
+    margin-right: 20px;
+    height: 450px;
+    width: 100px;
+}
+
+#title {
+    color: white;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 /* color variables */
 :root {
-    --dark: rgb(8, 34, 49);
+    --dark: rgb(23, 63, 87);
     --light: rgb(85, 123, 129);
     --whiteFont: rgb(245, 245, 245);
 }
@@ -18,8 +18,7 @@ footer {
 
 .top-bar a {
     color: var(--whiteFont);
-    border-bottom: 2px solid white;
-    font-size: 24px;
+    font-size: 36px;
 }
 .top-bar a:visited {
     color: var(--whiteFont);
@@ -27,7 +26,6 @@ footer {
 
 .top-bar a:hover {
     color: skyblue;
-    border-bottom: none;
 }
 
 .dropdown {
@@ -77,15 +75,7 @@ footer {
     max-width: 100vw;
     max-height: 25vw;
 }
-#moviePoster {
-    display: inline-block;
-    background-color: var(--dark);
-    border: 5px solid rgb(245, 245, 245);
-    padding: 5px;
-    margin: 20px;
-    height: 450px;
-    width: 100px;
-}
+
 #text-box{
     height: 300px;
     width: 800px;

@@ -14,16 +14,19 @@
 }
 
 main {
-    background-color: white;
+    background-color: black;
 }
 
 main h1 {
     padding: 10px;
-    border-bottom: 1px solid black;
-    color: var(--dark);
+    border-bottom: 1px solid white;
+    color: white;
 }
 
 section {
     margin-top: 40px;
 }
 
+header {
+    background-color: var(--light);
+}
