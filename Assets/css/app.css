@@ -14,8 +14,14 @@ footer {
 .top-bar {
     background-color: var(--dark);
 }
+.top-bar a {
+    font-size: 30px;
+}
 .top-bar a:visited {
     color: var(--whiteFont);
+}
+.top-bar a:hover {
+    color: var(--light);
 }
 #banner {
     height: 250px;
@@ -79,4 +85,9 @@ footer {
 }
 #ingredients {
     list-style-type: none;
+}
+
+#randomGen:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
