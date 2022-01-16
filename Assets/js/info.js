@@ -77,9 +77,20 @@ var getMovieInfo = function(sourceID) {
             //populating poster img//
             let posterID = data.poster_path;                                    
             let moviePoster = 'https://image.tmdb.org/t/p/original/' + posterID;
-            let poster = document.getElementById('pic-box')
-            poster.setAttribute('src', moviePoster);
-
+            let poster = document.getElementById('pic-box');
+            //PR : Allow get image file from Cross Origin
+            poster.crossOrigin = '';
+            poster.onload = function() {
+                Grade(document.querySelectorAll('.gradient-wrap'), null, function(gradientData){
+                    //PR: Linear gradient for info page when a movie info is displayed
+                    var rgba1 = (gradientData[0].gradientData)[0].rgba;
+                    var rgba2 = (gradientData[0].gradientData)[1].rgba;
+                    var color1 = 'rgb('+rgba1[0]+','+rgba1[1]+','+rgba1[2]+')';
+                    var color2 = 'rgb('+rgba2[0]+','+rgba2[1]+','+rgba2[2]+')';
+                    $("body").css('background','linear-gradient(to right, '+color1+', '+color2+')' );
+                })                  
+            };
+            poster.src = moviePoster;   
         })
 }
 
