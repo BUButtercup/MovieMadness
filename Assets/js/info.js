@@ -132,10 +132,41 @@ let getMovieCast = function(sourceID){
 
 };
 
+let getMovieTrailer = function(sourceID) {
+    fetch('https://api.themoviedb.org/3/movie/' + sourceID + '/videos?api_key=734711869501c48d5ea1cb162098c006')
+    .then(response => response.json())
+        .then(data => {
+            var youtubeKey;
+            var results = data.results;
+            console.log(results)
+            //PR: Either find an official trailer
+            for(var i=0; i<results.length; i++) {
+                console.log(results[i].official==true)
+                if(results[i].type=="Trailer" && results[i].official==true) {
+                    youtubeKey = results[i].key
+                }
+            }
+            //PR: Otherwise get an unofficial trailer
+            if(youtubeKey == undefined) {
+                for(var i=0; i<results.length; i++) {
+                    console.log(results[i].official==true)
+                    if(results[i].type=="Trailer") {
+                        youtubeKey = results[i].key
+                    }
+                }
+            }
+            console.log('youtubeKey = '+youtubeKey)
+            $("#trailerCard").append('<iframe width="410" height="300" src="https://www.youtube.com/embed/'+youtubeKey+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        });
+
+    
+}
+
 var randomMovie = function() {
     let randomID = staffPicks[Math.floor(Math.random()*staffPicks.length)];
     getMovieInfo(randomID);
     getMovieCast(randomID);
+    getMovieTrailer(randomID);
 }
 
 // event listener for randomizer
@@ -176,4 +207,5 @@ cocktailBtn.click(cocktail);
 // get movie cast since not contained in movie object
 getMovieCast(storedID);
 getMovieInfo(storedID);
+getMovieTrailer(storedID);
 

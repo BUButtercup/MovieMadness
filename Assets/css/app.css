@@ -49,7 +49,7 @@ footer {
     padding: 5px;
     margin: 20px;
 }
-#cardTitle {
+#trailerCard {
     background-color: var(--dark);
     color: var(--whiteFont);
     font-size: 30px;
