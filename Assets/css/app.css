@@ -14,8 +14,14 @@ footer {
 .top-bar {
     background-color: var(--dark);
 }
+.top-bar a {
+    font-size: 30px;
+}
 .top-bar a:visited {
     color: var(--whiteFont);
+}
+.top-bar a:hover {
+    color: var(--light);
 }
 #banner {
     height: 250px;
@@ -90,7 +96,7 @@ footer {
     padding: 5px;
     margin: 20px;
 }
-#cardTitle {
+#trailerCard {
     background-color: var(--dark);
     color: var(--whiteFont);
     font-size: 30px;
@@ -126,4 +132,16 @@ footer {
 }
 #ingredients {
     list-style-type: none;
+}
+
+#randomGen:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .movieCard {
+        display: flex;
+        flex-direction: column;
+    }
 }
