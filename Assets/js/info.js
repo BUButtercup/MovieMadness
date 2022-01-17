@@ -73,9 +73,20 @@ var getMovieInfo = function(sourceID) {
             //populating poster img//
             let posterID = data.poster_path;                                    
             let moviePoster = 'https://image.tmdb.org/t/p/original/' + posterID;
-            let poster = document.getElementById('pic-box')
-            poster.setAttribute('src', moviePoster);
-
+            let poster = document.getElementById('pic-box');
+            //PR : Allow get image file from Cross Origin
+            poster.crossOrigin = '';
+            poster.onload = function() {
+                Grade(document.querySelectorAll('.gradient-wrap'), null, function(gradientData){
+                    //PR: Linear gradient for info page when a movie info is displayed
+                    var rgba1 = (gradientData[0].gradientData)[0].rgba;
+                    var rgba2 = (gradientData[0].gradientData)[1].rgba;
+                    var color1 = 'rgb('+rgba1[0]+','+rgba1[1]+','+rgba1[2]+')';
+                    var color2 = 'rgb('+rgba2[0]+','+rgba2[1]+','+rgba2[2]+')';
+                    $("body").css('background','linear-gradient(to right, '+color1+', '+color2+')' );
+                })                  
+            };
+            poster.src = moviePoster;   
         })
 }
 
@@ -117,10 +128,41 @@ let getMovieCast = function(sourceID){
 
 };
 
+let getMovieTrailer = function(sourceID) {
+    fetch('https://api.themoviedb.org/3/movie/' + sourceID + '/videos?api_key=734711869501c48d5ea1cb162098c006')
+    .then(response => response.json())
+        .then(data => {
+            var youtubeKey;
+            var results = data.results;
+            console.log(results)
+            //PR: Either find an official trailer
+            for(var i=0; i<results.length; i++) {
+                console.log(results[i].official==true)
+                if(results[i].type=="Trailer" && results[i].official==true) {
+                    youtubeKey = results[i].key
+                }
+            }
+            //PR: Otherwise get an unofficial trailer
+            if(youtubeKey == undefined) {
+                for(var i=0; i<results.length; i++) {
+                    console.log(results[i].official==true)
+                    if(results[i].type=="Trailer") {
+                        youtubeKey = results[i].key
+                    }
+                }
+            }
+            console.log('youtubeKey = '+youtubeKey)
+            $("#trailerCard").append('<iframe width="410" height="300" src="https://www.youtube.com/embed/'+youtubeKey+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        });
+
+    
+}
+
 var randomMovie = function() {
     let randomID = staffPicks[Math.floor(Math.random()*staffPicks.length)];
     getMovieInfo(randomID);
     getMovieCast(randomID);
+    getMovieTrailer(randomID);
 }
 
 // event listener for randomizer
@@ -161,4 +203,5 @@ cocktailBtn.click(cocktail);
 // get movie cast since not contained in movie object
 getMovieCast(storedID);
 getMovieInfo(storedID);
+getMovieTrailer(storedID);
 

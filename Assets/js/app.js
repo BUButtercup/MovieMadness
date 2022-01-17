@@ -1,4 +1,24 @@
 $(document).foundation();
+let staffPicks = [
+  "550988", // Free guy
+  "105864", // The good dinosaur
+  "10637", // Remember the Titans
+  "102899", // Ant Man
+  "926", // Galaxy Quest
+  "264660", // Ex Machina
+  "318846", // The Big Short
+  "157336",  // interstellar
+  "18240", // The proposal
+  "324857", // Spiderman, spiderverse
+  "9806", // Incredibles
+  "129", // Spirited Away
+  "1498", // TMNT
+  "546554", // Knives Out
+  "2493",  // Princess Bride
+  "314365", // Spotlight
+  "60308", // Moneyball
+  "530385" // MidSommar
+]
 
 // Fetch TMDB API for genre
 var getMovieByGenre = function (genre) {
@@ -54,6 +74,17 @@ var getMovieByTitle = function () {
     });
 };
 $("#btn").on("click", getMovieByTitle);
+
+var randomMovie = function() {
+  let randomID = staffPicks[Math.floor(Math.random()*staffPicks.length)];
+  localStorage.setItem("movieID", randomID);
+  window.location.assign("info.html");
+}
+
+// event listener for randomizer
+let randomizer = $("#randomGen")
+randomizer.click(randomMovie);
+
 
 
 // Fetch TMDB API for year
