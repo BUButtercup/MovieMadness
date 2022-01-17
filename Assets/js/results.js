@@ -1,16 +1,18 @@
 let listCont = document.querySelector('#list-container');
 let genreCats = [{id: 28, name: 'Action'}, {id: 12, name: 'Adventure'}, {id: 16, name: 'Animation'}, {id: 35, name: 'Comedy'}, {id: 80, name: 'Crime'}, {id: 99, name: 'Documentary'}, {id: 18, name: 'Drama'}, {id: 10751, name: 'Family'}, {id: 14, name: 'Fantasy'}, {id: 36, name: 'History'}, {id: 27, name: 'Horror'}, {id: 10402, name: 'Music'}, {id: 9648, name: 'Mystery'}, {id: 10749, name: 'Romance'}, {id: 878, name: 'Sci Fi'}, {id: 10770, name: 'TV Movie'}, {id: 53, name: 'Thriller'}, {id: 10752, name: 'War'}, {id: 37, name: 'Western'}];
 let movieObjects = JSON.parse(localStorage.getItem('movieObjects'));
+var totalItems = localStorage.getItem('totalItems');
+var dataSource = [];
 // let getInfoBtns = document.querySelectorAll('.movieCard');;
 
 
 function loadInfo(index){
-    console.log(movieObjects)
-    console.log(index)
-    console.log(movieObjects[index])
-    console.log(movieObjects[index].id)
+    // console.log(movieObjects)
+    // console.log(index)
+    // console.log(movieObjects[index])
+    // console.log(movieObjects[index].id)
     localStorage.setItem("movieID", JSON.stringify(movieObjects[index].id))
-    window.location.assign("info.html")
+    window.location.assign("info.html")  
 }
 
 // event listener for the cards
@@ -38,7 +40,7 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
     let releaseYear;
     let genres = [];
 
-    console.log("movieObj : ", movieObj.title, movieObj);
+    // console.log("movieObj : ", movieObj.title, movieObj);
 
     function getGenres(){
         genreIDs = movieObj.genre_ids;
@@ -61,7 +63,7 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
         let releaseDate = movieObj.release_date;
         releaseYear = releaseDate.split('-');
         releaseYear = releaseYear[0];
-        console.log('releaseYear: ', releaseYear);
+        // console.log('releaseYear: ', releaseYear);
     }
 
     getGenres();
@@ -105,6 +107,7 @@ function makeListCard(arrInd){ //what is feeding into here is the object that is
     movieCard.appendChild(poster);
     movieCard.appendChild(movieBox);
 
+    dataSource.push(movieCard);
     //putting the card in the list
     listCont.appendChild(movieCard);
 
@@ -115,4 +118,22 @@ window.onload = () =>{
     for (let i=0; i< movieObjects.length; i++){      //for each of the first 5 movies on the list
         makeListCard(i)
     } 
+    // console.log(dataSource);
+    var noOfItemsPerPage = 10;
+
+    $("#list-container .movieCard").slice(noOfItemsPerPage).hide();
+        $('#pagination').pagination({
+  
+            // Total number of items present
+            // in wrapper class
+            items: totalItems,
+  
+            // Items allowed on a single page
+            itemsOnPage: noOfItemsPerPage, 
+            onPageClick: function (noofele) {
+                $("#list-container .movieCard").hide()
+                    .slice(noOfItemsPerPage*(noofele-1),
+                    noOfItemsPerPage+ noOfItemsPerPage* (noofele - 1)).show();
+            }
+        });
 }

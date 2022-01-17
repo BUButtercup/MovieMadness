@@ -19,35 +19,35 @@ let staffPicks = [
   "60308", // Moneyball
   "530385" // MidSommar
 ]
+var movieObjects = [];
+var lastPage = 0;
+var totalItems = 0;
 
 // Fetch TMDB API for genre
-var getMovieByGenre = function (genre) {
+var getMovieByGenre = function (genre, pageNo) {
   //sorting results on the basis of vote count >=10 and vote average
   fetch(
-    "https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&vote_count.gte=1000&with_genres="+genre)
+    "https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&vote_count.gte=1000&with_genres="+genre+"&page="+pageNo)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      var totalPages = data.total_pages;
-      console.log("totalPages : " + totalPages);
-      //generating a random number between 1 and total pages
-      var randomPage = getRandomInt(1, totalPages);
-      console.log(randomPage);
-
-      fetch("https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&vote_count.gte=1000&with_genres="+genre +"&page=" +randomPage)
-        .then((genrePageresponse) => genrePageresponse.json())
-        .then((genrePage) => {
-          console.log(genrePage);
-          let movieObjects = Array.from(genrePage.results);
-          //console.log(movieObjects)
-          movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 10 movie objects
-          // console.log(movieObjects);
-          localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
-
-          //open up the result page
-          window.location.assign("results.html");
+       console.log(data);
+      lastPage = 10;
+      totalItems = 100;
+      for(var i=0; i<data.results.length; i++) {
+        movieObjects.push(data.results[i]);
+      }
+      if(pageNo >= lastPage) {
+        // console.log(movieObjects)
+        localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
+        localStorage.setItem("totalItems", totalItems);
+        //open up the result page
+         window.location.assign("results.html");
+      }
+      else {
+        console.log("here");
+       getMovieByGenre(genre, pageNo+1);
+      }
         });
-    });
 };
 
 //PR: Function for generating random pages on search of a genre
@@ -57,23 +57,40 @@ function getRandomInt(min, max) {
 }
 
 //Fetch TMDB API for user input
-var getMovieByTitle = function () {
+var getMovieByTitle = function (pageNo) {
   var userInputEl = $("#userInput").val();
-  fetch(
-    "https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=backdrop_path&query=" +userInputEl)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      let movieObjects = Array.from(data.results);
-      //console.log(movieObjects)
-      movieObjects = movieObjects.slice(0, 10); //cutting it down to an array of 5 movie objects
-      console.log(movieObjects);
-      localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
-      //open up the result page
-      window.location.assign("results.html");
-    });
+  // var lastPage = 0;
+  // var totalItems = 0;
+    fetch(
+      "https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=backdrop_path&query="+userInputEl+"&page="+pageNo)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.results);
+         
+        lastPage = data.total_pages;
+        totalItems = data.total_results;
+        console.log(pageNo)
+        console.log(totalItems);
+        for(var i=0; i<data.results.length; i++) {
+          movieObjects.push(data.results[i]);
+        }
+        if(pageNo >= lastPage) {
+          // console.log(movieObjects)
+          localStorage.setItem("movieObjects", JSON.stringify(movieObjects));
+          localStorage.setItem("totalItems", totalItems);
+          //open up the result page
+           window.location.assign("results.html");
+        }
+        else {
+          console.log("here");
+         getMovieByTitle(pageNo+1);
+        }
+        
+      });
 };
-$("#btn").on("click", getMovieByTitle);
+$("#btn").on("click", function() {
+  getMovieByTitle(1)
+});
 
 var randomMovie = function() {
   let randomID = staffPicks[Math.floor(Math.random()*staffPicks.length)];
