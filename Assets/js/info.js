@@ -128,6 +128,7 @@ let getMovieCast = function(sourceID){
 
 };
 
+//PR: Movie Trailer
 let getMovieTrailer = function(sourceID) {
     fetch('https://api.themoviedb.org/3/movie/' + sourceID + '/videos?api_key=734711869501c48d5ea1cb162098c006')
     .then(response => response.json())
@@ -151,8 +152,7 @@ let getMovieTrailer = function(sourceID) {
                     }
                 }
             }
-            console.log('youtubeKey = '+youtubeKey)
-            $("#trailerCard").append('<iframe width="410" height="300" src="https://www.youtube.com/embed/'+youtubeKey+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            $("#trailerCard").empty().append('<iframe width="410" height="300" src="https://www.youtube.com/embed/'+youtubeKey+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         });
 
     
