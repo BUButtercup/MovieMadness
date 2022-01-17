@@ -28,10 +28,6 @@ let staffPicks = [
 
 movieCard.setAttribute('style', 'display:flex');
 let storedID = JSON.parse(localStorage.getItem('movieID')); 
-// in future local from results will be called storedMovie
-// let storedTitle = storedMovie.title;
-// let storedOver = storedMovie.overview;
-// let movieID = storedMovie.id;
 
 var getMovieInfo = function(sourceID) {
     let movieId = sourceID
@@ -50,8 +46,8 @@ var getMovieInfo = function(sourceID) {
             tagLine.textContent = '';
             if (data.tagline !== ''){
                 tagLine.textContent = '"' + data.tagline + '"';
-                tagLine.setAttribute('style', 'font-style:italic; font-size: 1.5em; font-weight:bold; text-align:center')
-                movieOver.setAttribute('style', 'margin-bottom: -50px')
+                tagLine.setAttribute('style', 'font-style:italic; font-size: 1.5em; font-weight:bold; text-align:center; padding-top: 10px')
+                // movieOver.setAttribute('style', 'margin-bottom: -50px')
                 overviewBox.setAttribute('style', 'display:flex; flex-direction: column')
             }
             //getting genres//
