@@ -80,3 +80,10 @@ footer {
 #ingredients {
     list-style-type: none;
 }
+
+@media screen and (max-width: 400px) {
+    .movieCard {
+        display: flex;
+        flex-direction: column;
+    }
+}
