@@ -62,7 +62,7 @@ var getMovieByTitle = function (pageNo) {
   // var lastPage = 0;
   // var totalItems = 0;
     fetch(
-      "https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=backdrop_path&query="+userInputEl+"&page="+pageNo)
+      "https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=vote_count.desc&sort_by=backdrop_path&query="+userInputEl+"&page="+pageNo)
       .then((response) => response.json())
       .then((data) => {
         console.log(data.results);
