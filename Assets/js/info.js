@@ -186,6 +186,9 @@ var cocktail = function() {
             if (ingredient == null) {
                 return false;
             }
+            if (amount == null) {
+                amount = "";
+            }
             var newLi = document.createElement("li")
             newLi.textContent = amount + " " + ingredient;
             var list = document.getElementById("ingredients")
