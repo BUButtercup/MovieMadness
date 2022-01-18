@@ -27,12 +27,12 @@ var totalItems = 0;
 var getMovieByGenre = function (genre, pageNo) {
   //sorting results on the basis of vote count >=10 and vote average
   fetch(
-    "https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&vote_count.gte=1000&with_genres="+genre+"&page="+pageNo)
+    "https://api.themoviedb.org/3/discover/movie?api_key=734711869501c48d5ea1cb162098c006&vote_count.gte=5000&with_genres="+genre+"&page="+pageNo)
     .then((response) => response.json())
     .then((data) => {
        console.log(data);
-      lastPage = 10;
-      totalItems = 100;
+      lastPage = Math.min(10, data.total_pages);
+      totalItems = Math.min(100, data.total_results);
       for(var i=0; i<data.results.length; i++) {
         movieObjects.push(data.results[i]);
       }
