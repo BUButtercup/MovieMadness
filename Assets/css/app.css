@@ -94,6 +94,59 @@ footer {
     display: inline-block;
 }
 
+#searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* border: 1px solid white; */
+    margin-bottom: 20px;
+    height: 75px;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 75px;
+}
+
+#grBtn {
+    width: 10em;
+    align-self: stretch;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#OR{
+    padding: 0 2em;
+}
+
+#userInput {
+    width: 15em;
+    height: 100%;
+    align-self: stretch;
+    font-size: 1.5em;
+    margin-right: 1.5em;
+
+}
+
+#search {
+    display: flex;
+    align-items: stretch;
+    /* border: 1px solid green; */
+    width: 50%;
+    height: 100%;
+}
+
+#btn {
+    width: 10em;
+    height: 100%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 .stylingCard {
     display: inline-block;
     background-color: var(--dark);
@@ -259,6 +312,71 @@ div#programatic-open {
         text-align: center;
     }
 
+    #mainh1 {
+        font-size: 2em;
+    }
+
+    #searchbox {/*holds everything*/
+        display: flex;
+        /*flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+        width: 100%;
+         /* border: 1px solid white; */
+        /*margin: 125px 0 150px 0;*/
+        height: 7vh;
+    }
+
+
+#menu {/*holds the genre dropdown*/
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 100%;
+}
+
+#grBtn {/*genre button*/
+    width: 20vw;
+    align-self: stretch;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+#OR{/*the or h3*/
+    width: 10vw;
+    text-align: center;
+    font-size: 1em;
+    padding: 0 1em;
+}
+
+#userInput {/*typing input*/
+    height: 100%;
+    /* align-self: stretch; */
+    font-size: 1em;
+    /* margin-right: 1.5em; */
+
+}
+
+#search {/*holds typing box and search button*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+    width: 50%;
+    height: 100%;
+}
+
+
+#btn {/*the search button*/
+    height: 100%;
+    width: 20vw;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: -3px;
+}
+
     #list-container {
         width: 100%;
     }
@@ -338,7 +456,88 @@ div#programatic-open {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 590px) {
+    #mainh1 {
+        font-size: 1.5em;
+    }
+
+    
+    #searchbox {/*holds everything*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* border: 1px solid white; */
+        margin: 0;
+        height:50%;
+    }
+    
+    #menu {/*holds the genre dropdown*/
+        display: flex;
+        flex-direction: center;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 100%;
+    }
+    
+    #grBtn {/*genre button*/
+        width: 80%;
+        height: 7vh;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    
+    #OR{/*the or h3*/
+        width: 80%;
+        text-align: center;
+        padding: 5px 0;
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        /* border: 1px solid red; */
+        /* padding: 0 2em; */
+    }
+    
+    #userInput {/*typing input*/
+        width: 80%;
+        height: 7vh;
+        align-self: center;
+        font-size: 1em;
+        padding: 0;
+        margin: 0 0 5px 0;
+        /* margin-right: 1.5em; */
+    
+    }
+    
+    #search {/*holds typing box and search button*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* border: 1px solid green; */
+        width: 100%;
+        height: 15vh;
+    }
+    
+    
+    #btn {/*the search button*/
+        width: 80%;
+        height: 7vh;
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 405px) {
+
+    #mainh1 {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
 
     #list-container {
         display: flex;
