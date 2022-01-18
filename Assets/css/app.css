@@ -288,6 +288,7 @@ footer {
         flex-direction: row;
         align-items: stretch;
         justify-content: center;
+        width: 100%;
         /* border: 3px solid white; */
     }
     
