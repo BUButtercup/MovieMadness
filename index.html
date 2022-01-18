@@ -59,15 +59,15 @@
   </div>
   <!-- container for main content -->
   <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="large-10 cell">
-        <h1>Search a genre or movie title below!</h1>
+    <div >
+      <div  style="text-align: center">
+        <h1 id="mainh1">Search a genre or movie title below!</h1>
       </div>
     </div>
     <div class="grid-x grid-padding-x">
-      <div class="large-3 cell">
-        <div class="dropdown">
-          <button class="dropbtn">Genre &#8595</button>
+      <div  id="searchbox">
+        <div class="dropdown" id="menu">
+          <button class="dropbtn" id="grBtn">Genre Search &#8595</button>
           <div class="dropdown-content">
             <a href="results.html" onclick="getMovieByGenre('28',1); return false;">Action</a>
             <a href="results.html" onclick="getMovieByGenre('12',1); return false;">Adventure</a>
@@ -90,21 +90,23 @@
             <a href="results.html" onclick="getMovieByGenre('37',1); return false;">Western</a>
           </div>
         </div>
-        <h3>OR</h3>
-        <div class="large-5 cell">
+
+        <h3 id='OR'>OR</h3>
+
+        <div  id="search" >
           <input id="userInput" type="search" placeholder="Search the title here...">
-          <button type="button" id="btn" class="button" style="width:271px">Search</button>
-
-          <!--NKC added modal alert for status >200-->
-          <div id="programatic-open" class="reveal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-            <h2 id="modalTitle"><em><strong>Oops!</strong></em></h2>
-            <p class="lead">Your search returned no results! Did you spell it right?</p>
-            <a class="close-button" data-close aria-label="Close">&#215;</a>
-
-
-          </div>
+          <button type="button" id="btn" class="button">Search</button>
         </div>
       </div>
+
+      <!--NKC added modal alert for status >200-->
+      <div id="programatic-open" class="reveal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h2 id="modalTitle"><em><strong>Oops!</strong></em></h2>
+        <p class="lead">Your search returned no results! Did you spell it right?</p>
+        <a class="close-button" data-close aria-label="Close">&#215;</a>
+      </div>
+
+      
       <!-- card that explains how to use the site and holds the random generator -->
       <div class="card" id="aboutSect">
         <div class="card-section">
