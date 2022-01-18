@@ -1,8 +1,4 @@
 /* color variables */
-* {
-    box-sizing: border-box;
-}
-
 :root {
     --dark: rgb(8, 34, 49);
     --light: rgba(245, 245, 245, 0.26);
