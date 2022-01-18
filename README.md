@@ -22,5 +22,18 @@ SO THAT  I can find new movies based on genre and look up details about my favor
 
 ## Technologies used
 MovieDatabase API, TheCocktailDB API, Foundation
+<img width="1204" alt="Screen Shot 2022-01-17 at 5 23 28 PM" src="https://user-images.githubusercontent.com/95940864/149854762-c9796214-c2ba-491e-b4ce-309fe6d5e0df.png">
 
-Screenshot(s)
+Screenshots of our finished project:
+Desktop:
+<img width="1052" alt="Screen Shot 2022-01-17 at 5 22 11 PM" src="https://user-images.githubusercontent.com/95940864/149854760-214fabcc-9ebc-4441-a8a1-41050e1c0430.png"><img width="909" alt="Screen Shot 2022-01-17 at 5 22 26 PM" src="https://user-images.githubusercontent.com/95940864/149854761-10df31c4-12ce-495f-ab95-6618f0920c43.png">
+Tablet:
+<img width="383" alt="Screen Shot 2022-01-17 at 5 30 43 PM" src="https://user-images.githubusercontent.com/95940864/149855388-2b16a77e-3c64-432b-a871-a9e34fb7f884.png">
+<img width="379" alt="Screen Shot 2022-01-17 at 5 29 25 PM" src="https://user-images.githubusercontent.com/95940864/149855396-f5816790-954b-46c8-a6d2-4577805a26ec.png">
+<img width="382" alt="Screen Shot 2022-01-17 at 5 29 08 PM" src="https://user-images.githubusercontent.com/95940864/149855402-295a5936-7e97-41cd-9995-90a2721754de.png">
+Mobile:<img width="277" alt="Screen Shot 2022-01-17 at 5 30 30 PM" src="https://user-images.githubusercontent.com/95940864/149855417-f0fde2b1-7c9d-4884-a45f-cfc4a3bb646b.png">
+<img width="273" alt="Screen Shot 2022-01-17 at 5 29 37 PM" src="https://user-images.githubusercontent.com/95940864/149855425-4d23205a-217f-4475-91fe-5ecfd078dcfa.png">
+<img width="275" alt="Screen Shot 2022-01-17 at 5 28 49 PM" src="https://user-images.githubusercontent.com/95940864/149855433-c441d67b-dab4-4fad-b91a-2e5360a19384.png">
+
+
+
