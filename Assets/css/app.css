@@ -7,9 +7,6 @@
 body {
     background-color: var(--dark);
     color: var(--whiteFont);
-    display: flex;
-    flex-direction: column;
-    align-items:center;
 }
 
 header {
@@ -376,13 +373,13 @@ footer {
         margin: 0 10px;
       }
   
-      #text-box{
-          text-align: center;
-          height: 100%;
-          width: auto;
-          padding: 0 20px;
-          margin: 0 20px;
-      }
+    #text-box{
+        text-align: center;
+        height: 100%;
+        width: auto;
+        padding: 0;
+        margin: 0 10px;
+    }
 }
 
 @media screen and (max-width: 400px) {
