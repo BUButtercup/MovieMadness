@@ -1,4 +1,8 @@
 /* color variables */
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --dark: rgb(8, 34, 49);
     --light: rgba(245, 245, 245, 0.26);
@@ -7,7 +11,16 @@
 body {
     background-color: var(--dark);
     color: var(--whiteFont);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
+
+header {
+    align-self: stretch;
+    
+}
+
 footer {
     text-align: center;
 }
@@ -103,12 +116,6 @@ footer {
     color: var(--whiteFont);
 }
 
-#trailerCard {
-    background-color: var(--dark);
-    color: var(--whiteFont);
-    font-size: 30px;
-    padding: 5px;
-}
 
 #orbitStyling {
     max-width: 100vw;
@@ -129,13 +136,9 @@ footer {
 }
 
 #text-box{
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     height: 100%;
     width: auto;
-}
-
-#over {
-    height: 200px;
 }
 
 #aboutSect, #aboutUs {
@@ -151,27 +154,34 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+}
+
+#overbox {
+    display: flex;
+    flex-direction: column;
+}
+
+#tagline {
+    font-style: italic;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
 }
 
 #bigBox {
     margin: 5px;
-    border: 2px solid green;
 }
 
 #medLrgBox {
     display: flex;
-    border: 2px solid blue;
 }
 
 #medBox{
     display: flex;
     flex-direction: row;
-
     align-items: stretch;
     justify-content: center;
-    border: 3px solid white;
-    /* width: auto; */
 }
 
 #cocktail, #random {
@@ -188,28 +198,43 @@ footer {
 }
 
 #trailer {
-    width: 420px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: stretch;
+    background-color: transparent;
+    border: none;
 }
 
-#trailerCard { /**Nile moved this over from info for the moment?**/
-    min-width: 410px;  /*without these parameters, it seems to fit it's container better? NKC
-    /* height: 300px;  */
+#trailerCard {
+    background-color: black;
+    color: var(--whiteFont);
+    min-width: 410px; 
+    font-size: 30px;
     border: 1px solid white;
-}
+}/**Nile moved this over from info for the moment? there was already a rule set for this selector in this file**/
 
-@media screen and (max-width: 1215px) {
+
+@media screen and (max-width: 1150px) {
+    #movDets {
+        font-size: 1.75em;
+    }
+    
     #medLrgBox {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 2px solid blue;
     }
-}
+
+    #cast, #over {
+        font-size: 0.9em;
+    }
+
+    #tagline {
+        font-size: 1em;
+        padding-top: 0;
+    }
 
     #medBox{
         order: 2;
@@ -224,10 +249,20 @@ footer {
         justify-content: center;
         align-items: center;
     }
+}
 
 @media screen and (max-width: 800px) {
-    body { 
-        width: 100vw;
+
+    header {
+        text-align: center;
+    }
+
+    #list-container {
+        width: 100%;
+    }
+
+    .movieCard {
+        width: 100%;
     }
 
     #bigBox {
@@ -240,12 +275,15 @@ footer {
 
     #medLrgBox {
       width: 100%;
+      margin: 0 10px;
     }
 
     #text-box{
-        border: 2px solid purple;
+        /* border: 2px solid purple; */
         height: 100%;
         width: auto;
+        padding: 0 20px;
+        margin: 0 20px;
     }
 
     #medBox{
@@ -254,7 +292,7 @@ footer {
         flex-direction: row;
         align-items: stretch;
         justify-content: center;
-        border: 3px solid white;
+        /* border: 3px solid white; */
     }
     
     #moviePoster {
@@ -283,19 +321,8 @@ footer {
         width: 100%;
     }
 
-    #cocktail {
-        /* height: 600px; */
-        /* margin-top: 220px; */
-
-    }
-
     #cocktailTitle {
         text-align: center;
-    }
-
-
-    #random {
-        /* height: 600px; */
     }
 
     #randomTitle {
@@ -309,18 +336,27 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
-    
-    header {
-        width: 100%;
-        /* display: flex;
+
+    #list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        align-items: center; */
-        text-align: center;
+        padding: 0;
     }
 
     .movieCard {
         display: flex;
         flex-direction: column;
+        font-size: 0.8em;
+        width: 100%;
+    }
+
+    .movieCard h4 {
+        text-align: center;
+    }
+    .movieCard h5 {
+        font-size: 1em;
     }
 
     .stylingCard {
@@ -337,4 +373,35 @@ footer {
         padding: 0 10px;
         width: 100%;
     }
+
+    #medLrgBox {
+        width: 100%;
+        margin: 0 10px;
+      }
+  
+      #text-box{
+          text-align: center;
+          height: 100%;
+          width: auto;
+          padding: 0 20px;
+          margin: 0 20px;
+      }
 }
+
+@media screen and (max-width: 400px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #bigBox{
+        margin: 0;
+    }
+    
+    #text-box {
+        width: 80%;
+        margin: 0;
+    }
+
+}
+
