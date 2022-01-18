@@ -63,7 +63,15 @@ var getMovieByTitle = function (pageNo) {
   // var totalItems = 0;
     fetch(
       "https://api.themoviedb.org/3/search/movie?&api_key=734711869501c48d5ea1cb162098c006&sort_by=title&sort_by=vote_count.desc&sort_by=backdrop_path&query="+userInputEl+"&page="+pageNo)
-      .then((response) => response.json())
+      .then(function (response) {
+        console.log(response);
+        if (response.status >= 400) {///////////////////
+          $('#programatic-open').foundation('open');
+          
+          // response.status;
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log(data.results);
          
@@ -91,6 +99,12 @@ var getMovieByTitle = function (pageNo) {
 $("#btn").on("click", function() {
   getMovieByTitle(1)
 });
+$(document).on('keyup', '#userInput', function(event) {
+  if (event.keyCode === 13){
+    event.preventDefault();
+    $('#btn').click();
+  }
+})
 
 var randomMovie = function() {
   let randomID = staffPicks[Math.floor(Math.random()*staffPicks.length)];

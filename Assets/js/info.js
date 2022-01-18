@@ -46,9 +46,6 @@ var getMovieInfo = function(sourceID) {
             tagLine.textContent = '';
             if (data.tagline !== ''){
                 tagLine.textContent = '"' + data.tagline + '"';
-                tagLine.setAttribute('style', 'font-style:italic; font-size: 1.5em; font-weight:bold; text-align:center; padding-top: 10px')
-                // movieOver.setAttribute('style', 'margin-bottom: -50px')
-                overviewBox.setAttribute('style', 'display:flex; flex-direction: column')
             }
             //getting genres//
             let genres = data.genres;

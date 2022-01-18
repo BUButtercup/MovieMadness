@@ -21,18 +21,16 @@
   <main>
 
     <!-- container for movie info -->
-    <div class="grid-container">
+    <div class="grid-container" id="bigBox">
       <section id="movie-card">
-        <div class="card" id="moviePoster">
-          <div class="card-section gradient-wrap" id="cardImg">
-            <img id="pic-box"  alt="Picbox"> <!--PR:Added alt attribute-->
-          </div>
+        <div class="card card-section gradient-wrap" id="moviePoster">
+<!--nkc removed div box and merged classes for simplicity-->
+            <img id="pic-box"  alt="Picbox"> <!--PR:Added--> 
         </div>
-        <!-- <div class="" id="pic-box"></div> -->
         <div id="text-box">
           <div class="grid-x grid-padding-x">
             <div class="large-12 cell">
-              <h1>Movie Details</h1>
+              <h1 id="movDets">Movie Details</h1>
             </div>
           </div>
           <div class="card">
@@ -46,7 +44,7 @@
               <p id="cast">Director & Cast</p>
             </div>
           </div>
-          <div class="card">
+          <div class="card" id="overoverbox">
             <div class="card-section" id="overbox">
               <p id="over">Description of film</p>
               <span id="tagline"></span>
@@ -56,33 +54,37 @@
       </section>
       <br>
       <!-- container for random cocktail generator -->
-      <div class="card" id="stylingCard" style="width: 300px;">
-        <div class="card-divider" id="cardTitle">
-          Cocktail Generator
+      <div id="medLrgBox">
+        <div id="medBox">
+          <div class="card stylingCard" id="cocktail">
+              <div class="card-divider cardTitle" id="cocktailTitle">
+                Cocktail Generator
+              </div>
+              <div class="card-section" id="cardImg">
+                <img src="./Assets/cocktail.jpeg"  alt="Cocktail">  <!--PR:Added alt attribute-->
+                <h4 id="cocktailName">Click 'Go!' to receive a drink suggestion.</h4>
+                <ul id="ingredients"></ul>
+                <button class="button" id="cocktailBtn">Go!</button>
+              </div>
+            </div>
+            <!-- container for random movie generator -->
+            <div class="card stylingCard" id="random">
+              <div class="card-divider cardTitle" id="randomTitle">
+                Random Movie
+              </div>
+              <div class="card-section" id="cardImg">
+                <img src="./Assets/random.jpeg"  alt="Randomizer"> <!--PR:Added alt attribute-->
+                <h4>Not sure what you're looking for?</h4>
+                <button class="button" id="randomizer">Get a Staff Pick!</button>
+              </div>
+            </div>
         </div>
-        <div class="card-section" id="cardImg">
-          <img src="./Assets/cocktail.jpeg"  alt="Cocktail">  <!--PR:Added alt attribute-->
-          <h4 id="cocktailName">Click 'Go!' to receive a drink suggestion.</h4>
-          <ul id="ingredients"></ul>
-          <button class="button" id="cocktailBtn">Go!</button>
+        <div class="card stylingCard" id="trailer">
+          <div class="card-divider" id="trailerCard">
+          </div>
         </div>
       </div>
-      <!-- container for random movie generator -->
-      <div class="card" id="stylingCard" style="width: 300px;">
-        <div class="card-divider" id="cardTitle">
-          Random Movie
-        </div>
-        <div class="card-section" id="cardImg">
-          <img src="./Assets/random.jpeg"  alt="Randomizer"> <!--PR:Added alt attribute-->
-          <h4>Not sure what you're looking for?</h4>
-          <button class="button" id="randomizer">Get a Staff Pick!</button>
-        </div>
-      </div>
-  
-      <div class="card" id="stylingCard">
-        <div class="card-divider" id="trailerCard">
-        </div>
-      </div>
+    </div>
   </main>
     <!-- footer with copyight -->
     <footer>

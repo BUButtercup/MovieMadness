@@ -94,6 +94,15 @@
         <div class="large-5 cell">
           <input id="userInput" type="search" placeholder="Search the title here...">
           <button type="button" id="btn" class="button" style="width:271px">Search</button>
+
+          <!--NKC added modal alert for status >200-->
+          <div id="programatic-open" class="reveal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <h2 id="modalTitle"><em><strong>Oops!</strong></em></h2>
+            <p class="lead">Your search returned no results! Did you spell it right?</p>
+            <a class="close-button" data-close aria-label="Close">&#215;</a>
+
+
+          </div>
         </div>
       </div>
       <!-- card that explains how to use the site and holds the random generator -->
