@@ -134,6 +134,15 @@ footer {
     width: auto;
 }
 
+div#programatic-open {
+    color: black;
+    padding: 5px;
+}
+
+#modalTitle, .lead {
+    text-align: center;
+}
+
 #aboutSect, #aboutUs {
     background-color: var(--light);
     color: var(--whiteFont);
