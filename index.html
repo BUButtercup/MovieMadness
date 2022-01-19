@@ -1,51 +1,144 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./Assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.YT6J0jzIEmE0AsxEhpXsaAHaHC%26pid%3DApi&f=1">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>MovieMania</title>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
 
-  </head>
-  <body>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">MovieMania</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-    
-          </ul>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieMadness</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+  <link rel="stylesheet" href="./Assets/css/foundation.css">
+  <link rel="stylesheet" href="./Assets/css/app.css">
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left text-center">
+        <h1><strong>MovieMadness</strong></h1>
+      </div>
+      <div class="top-bar-right">
+      </div>
+    </div>
+  </header>
+  <!-- slideshow at top -->
+  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <div class="orbit-wrapper">
+      <div class="orbit-controls">
+        <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+      </div>
+      <ul class="orbit-container">
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit.jpeg" alt="DC Comic Heros">
+          </figure>
+        </li>
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit1.jpeg" alt="Mashup of movie posters">
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit2.jpeg" alt="DC Villans and Heros">
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit3.jpeg" alt="Collage of action movies">
+          </figure>
+        </li>
+        <li class="orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" id="orbitStyling" src="./Assets/orbit4.jpeg" alt="Avengers Endgame banner">
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- container for main content -->
+  <div class="grid-container">
+    <div >
+      <div  style="text-align: center">
+        <h1 id="mainh1">Search a genre or movie title below!</h1>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div  id="searchbox">
+        <div class="dropdown" id="menu">
+          <button class="dropbtn" id="grBtn">Genre Search &#8595</button>
+          <div class="dropdown-content">
+            <a href="results.html" onclick="getMovieByGenre('28',1); return false;">Action</a>
+            <a href="results.html" onclick="getMovieByGenre('12',1); return false;">Adventure</a>
+            <a href="results.html" onclick="getMovieByGenre('16',1); return false;">Animation</a>
+            <a href="results.html" onclick="getMovieByGenre('35',1); return false;">Comedy</a>
+            <a href="results.html" onclick="getMovieByGenre('80',1); return false;">Crime</a>
+            <a href="results.html" onclick="getMovieByGenre('99',1); return false;">Documentary</a>
+            <a href="results.html" onclick="getMovieByGenre('18',1); return false;">Drama</a>
+            <a href="results.html" onclick="getMovieByGenre('10751',1); return false;">Family</a>
+            <a href="results.html" onclick="getMovieByGenre('14',1); return false;">Fanatasy</a>
+            <a href="results.html" onclick="getMovieByGenre('36',1); return false;">History</a>
+            <a href="results.html" onclick="getMovieByGenre('27',1); return false;">Horror</a>
+            <a href="results.html" onclick="getMovieByGenre('10402',1); return false;">Music</a>
+            <a href="results.html" onclick="getMovieByGenre('9648',1); return false;">Mystery</a>
+            <a href="results.html" onclick="getMovieByGenre('10749',1); return false;">Romance</a>
+            <a href="results.html" onclick="getMovieByGenre('878',1); return false;">Sci-Fi</a>
+            <a href="results.html" onclick="getMovieByGenre('10770',1); return false;">TV Movie</a>
+            <a href="results.html" onclick="getMovieByGenre('53',1); return false;">Thriller</a>
+            <a href="results.html" onclick="getMovieByGenre('10752',1); return false;">War</a>
+            <a href="results.html" onclick="getMovieByGenre('37',1); return false;">Western</a>
+          </div>
         </div>
-      </nav>
-    
-      <main class="container">
-        <form class="row">
-            <div class="input-field col s9">
-              <i class="material-icons prefix">search</i>
-              <input id="icon_search" type="text" class="validate">
-              <label for="icon_search">Search here...</label>
-            </div>
-            <div>
-                <!-- Dropdown Trigger -->
-                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-                <!-- Dropdown Structure -->
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">Title</a></li>
-                    <li><a href="#!">Genre</a></li>
-                    <li><a href="#!">Release Year</a></li>
 
-                </ul>
-            </div>
-        </form>
-            
-      </main>      
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./Assets/js/script.js"></script>
-  </body>
+        <h3 id='OR'>OR</h3>
+
+        <div  id="search" >
+          <input id="userInput" type="search" placeholder="Search the title here...">
+          <button type="button" id="btn" class="button">Search</button>
+        </div>
+      </div>
+
+      <!--NKC added modal alert for status >200-->
+      <div id="programatic-open" class="reveal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <h2 id="modalTitle"><em><strong>Oops!</strong></em></h2>
+        <p class="lead">Your search returned no results! Did you spell it right?</p>
+        <a class="close-button" data-close aria-label="Close">&#215;</a>
+      </div>
+
+      
+      <!-- card that explains how to use the site and holds the random generator -->
+      <div class="card" id="aboutSect">
+        <div class="card-section">
+          <h3>Use the search bar above to find your favorite title! You can search by title or pick your favorite genre.
+            Can't decide what to watch? <br><strong>Click the image below and we'll 'pop' you over to some of our staff
+              picks!</strong>
+          </h3>
+        </div>
+        <img id="randomGen" src="./Assets/popcorn.jpeg" alt="popcorn image">
+      </div>
+      <!-- About Us -->
+      <div class="card" id="aboutUs">
+        <div class="card-section">
+          <h1>About Us</h1>
+          <h4>A site made by movie-lovers, for movie-lovers! <br>
+            Forged in the firey underground film rings in quaint, little Seattle, MovieMadness is dedicated to making it
+            easier than ever to find information about your favorite films. 4 unlikely friends came together after
+            getting
+            a small loan of $1 million dollars from their parents to build this unique service from scratch. We hope
+            you'll enjoy using this service as much as we enjoyed making it! </h4>
+        </div>
+      </div>
+      <!-- footer with copyright -->
+      <footer>
+        © MovieMadness
+      </footer>
+    </div>
+  </div>
+  <script src="./Assets/js/vendor/jquery.js"></script>
+  <script src="./Assets/js/vendor/what-input.js"></script>
+  <script src="./Assets/js/vendor/foundation.js"></script>
+  <script src="./Assets/js/app.js"></script>
+</body>
+
 </html>

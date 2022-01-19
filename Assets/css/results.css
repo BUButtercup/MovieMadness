@@ -1,0 +1,41 @@
+.movieCard {
+    background-color: var(--dark);
+    width: 70%;
+}
+
+.movieCard:hover {
+    background-color: var(--light);
+    cursor: pointer;
+}
+
+.grid-container {
+    width: 80vw;
+}
+
+main {
+    background-color: var(--dark);
+}
+
+main h1 {
+    padding: 10px;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+section {
+    margin-top: 40px;
+}
+    
+/* .movieCard {
+    border: 1px solid #EEE;
+    background: #FFF;
+    margin-bottom: 10px;
+    padding: 10px;
+} */
+    
+#pagination {
+    margin-left: 200px;
+}
+
+
+
